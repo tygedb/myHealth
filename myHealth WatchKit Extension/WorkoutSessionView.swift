@@ -26,6 +26,8 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        let git = "Hello Git"
         setupWorkoutSessionInterface(with: context)
         
         // Create the session and obtain the workout builder.
