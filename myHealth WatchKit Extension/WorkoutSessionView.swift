@@ -4,6 +4,13 @@
 //
 //  Created by Tyge Bellinger on 5/28/20.
 //  Copyright © 2020 Tyge Bellinger. All rights reserved.
+
+//    //Location Properties
+//    let locationManager = CLLocationManager()
+//    let startLocation: CLLocation! = nil
+//    let endLocation: CLLocation! = nil
+//    var distanceTraveled = 0.0
+//    //
 //
 
 import WatchKit
@@ -20,41 +27,17 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
     @IBOutlet weak var distanceLabel: WKInterfaceLabel!
     
     var healthStore = HKHealthStore()
-   
-    let healthManager:HealthKitManager = HealthKitManager()
-   var configuration: HKWorkoutConfiguration!
-    
-   var session: HKWorkoutSession!
-   var builder: HKLiveWorkoutBuilder!
-//    var routeBuilder: HKWorkoutRouteQuery!
+    var configuration: HKWorkoutConfiguration!
+    var session: HKWorkoutSession!
+    var builder: HKLiveWorkoutBuilder!
     var workout: HKWorkout!
-    let sessionTwo = HKWorkoutActivityType.walking
-    //Location Properties
-    let locationManager = CLLocationManager()
-    let startLocation: CLLocation! = nil
-    let endLocation: CLLocation! = nil
-    var distanceTraveled = 0.0
-    //
-    override func awake(withContext context: Any?) {
+  
+    
+   override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-       
-        
-        
-        //Location Setup
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        } else {
-            print("Needs to enable Location")
-        }
-     
-              
         setupWorkoutSessionInterface(with: context)
         
-        
+    
         // Create the session and obtain the workout builder.
         /// - Tag: CreateWorkout
         do {
@@ -80,33 +63,8 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
         builder.beginCollection(withStart: Date()) { (success, error) in
             self.setDurationTimerDate(.running)
         }
+        
     }
-    
-   
-//    func route() {
-//        routeBuilder = HKWorkoutRouteBuilder(healthStore: healthStore, device: nil)
-//
-//    }
-//
-//
-//
-//
-//  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//        // Filter the raw data.
-//        let filteredLocations = locations.filter { (location: CLLocation) -> Bool in
-//            location.horizontalAccuracy <= 50.0
-//        }
-//
-//        guard !filteredLocations.isEmpty else { return }
-//
-//        // Add the filtered data to the route.
-//        routeBuilder.insertRouteData(filteredLocations) { (success, error) in
-//            if !success {
-//                // Handle any errors here.
-//            }
-//        }
-//    }
     
     // Track elapsed time.
     func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
@@ -124,6 +82,8 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
             
         }
     }
+    
+   
     
     func setDurationTimerDate(_ sessionState: HKWorkoutSessionState) {
         /// Obtain the elapsed time from the workout builder.
@@ -157,7 +117,6 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
             updateLabel(label, withStatistics: statistics)
         }
     }
-
     
     // MARK: - State Control
     func pauseWorkout() {
@@ -208,6 +167,7 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
     /// Action for the "Pause" menu item.
     @objc
     func pauseWorkoutAction() {
+        WKInterfaceDevice.current().play(.click)
         pauseWorkout()
     }
     
@@ -222,7 +182,6 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
     @objc
     func endWorkoutAction() {
         WKInterfaceDevice.current().play(.stop)
-        healthManager.saveDistance(distanceRecored: distanceTraveled, date: NSDate())
         endWorkout()
     }
     
@@ -276,7 +235,7 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 label.setText("\(roundedValue) BPM")
             case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
-                let energyUnit = HKUnit.largeCalorie()
+                let energyUnit = HKUnit.kilocalorie()
                 let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 label.setText("\(roundedValue) cal")
@@ -292,5 +251,6 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
             }
         }
     }
+    
     
 }

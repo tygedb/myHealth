@@ -14,11 +14,13 @@ import HealthKit
 class WaterInterfaceController: WKInterfaceController {
     var i = 0
     let healthStore = HKHealthStore()
+    static let shared = WaterInterfaceController()
 //    let toothbrush = HKObjectType.categoryType(forIdentifier: .toothbrushingEvent)
 //    let test = HKObjectType.characteristicType(forIdentifier:)
 //    let text = HKObjectType.correlationType(forIdentifier: .)
 //    let text = HKObjectType.documentType(forIdentifier: .CDA)
     let water = HKObjectType.quantityType(forIdentifier: .dietaryWater)
+//    lazy var healthKitController = HealthKitController(withModel: self)
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -56,6 +58,7 @@ class WaterInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    //MARK: Water Tracker
     @IBAction func eightOzButton() {
         WKInterfaceDevice.current().play(.success)
         let waterQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryWater)
@@ -193,6 +196,9 @@ class WaterInterfaceController: WKInterfaceController {
                    
                    
                }
+        
+        
     
 }
+    
 }

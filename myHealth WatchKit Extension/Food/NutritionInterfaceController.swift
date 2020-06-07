@@ -28,5 +28,26 @@ class NutritionInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        
+        
+        if segueIdentifier == "breakfast" {
+            self.presentController(withName: "addFood", context: nil)
+            
+           
+        }
+        
+        if segueIdentifier == "lunch" {
+            self.presentController(withName: "addFood", context: nil)
+            
+        }
+        
+        if segueIdentifier == "dinner" {
+            self.presentController(withName: "addFood", context: nil)
+            
+        }
+         return nil
+    }
   
 }

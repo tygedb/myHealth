@@ -22,10 +22,12 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     var timer = Timer()
     var session = WKExtendedRuntimeSession()
     var time = 15
-    
-    
+    var expirationDate = Date()
+   
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        session.delegate = self
+        session = WKExtendedRuntimeSession()
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
         batteryLife.setText("\(WKInterfaceDevice.current().batteryLevel)%")
         batteryLife.setTextColor(.red)
@@ -46,15 +48,9 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     }
     
     @IBAction func start(sender: AnyObject) {
-        if #available(watchOSApplicationExtension 6.1, *) {
-           
-            WKInterfaceDevice.current().enableWaterLock()
-        } else {
-            // Fallback on earlier versions
-        }
         session = WKExtendedRuntimeSession()
-        session.delegate = self
         session.start()
+        session.delegate = self
         WKInterfaceDevice.current().play(.start)
         alarmTime = Date()
         if (!timer.isValid) {
@@ -64,7 +60,17 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         }
         
     }
-    
+//    @objc func action() {
+//        if time < 1 {
+//            WKInterfaceDevice.current().play(.stop)
+//            timer.invalidate()
+//            time = 15
+//            session.invalidate()
+//        } else {
+//            time -= 1
+//        }
+//    }
+//
     @IBAction func stop(sender: AnyObject){
         session.invalidate()
         WKInterfaceDevice.current().play(.stop)
@@ -73,6 +79,7 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
                self.retreiveSleepAnalysis()
                timer.invalidate()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+           
             self.dismiss()
         }
                
@@ -178,11 +185,12 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     
    
     func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
+        print("Session stopped at \(Date())")
         
     }
     
     func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-       
+    print("Session started at\(Date())")
         
     }
     
