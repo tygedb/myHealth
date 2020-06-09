@@ -15,180 +15,151 @@ class CaffeineInterfaceController: WKInterfaceController {
     let healthStore = HKHealthStore()
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         // Configure interface objects here.
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-         
         self.activateHealthKit()
-        
-        
-       
     }
+//    MARK: Activate HealthKit
     func activateHealthKit() {
-                  let typesToRead = Set([
-                      HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCaffeine)!
-                  
-                  ])
-                  
-                  let typesToShare = Set ([
-                  
-                      HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCaffeine)!
-                  
-                  ])
-                  
-                  self.healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) -> Void in
+        let typesToRead = Set([
+        HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCaffeine)!
+    ])
+        let typesToShare = Set ([
+         HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCaffeine)!
+     ])
+        self.healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) -> Void in
                       
-                      if !success {
-                          print("HealthKit Auth Error\(String(describing: error))")
-                      }
-
-                  }
-              }
+        if !success {
+        print("HealthKit Auth Error\(String(describing: error))")
+            }
+        }
+    }
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    //MARK: 8 OZ Button
     @IBAction func eightOzAction() {
         WKInterfaceDevice.current().play(.success)
-                        let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
-                        let caffeineAmount = Int(8)
+        let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
+        let caffeineAmount = Int(8)
         let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
-                       let now = Date()
-                      let startDate = now.addingTimeInterval(-60)
-                      let endDate = now
-                     
-                      let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
-                    
-                      var sample: HKQuantitySample? = nil
-                      if let caffeineQuantityType = caffeineQuantityType {
-                          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
-                      }
-                      healthStore.save(sample!) { (success, error) in
-                          DispatchQueue.main.async {
-                              return
-                          }
-                          
-                          
-                      }
-        
-    }
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
+        var sample: HKQuantitySample? = nil
+        if let caffeineQuantityType = caffeineQuantityType {
+          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        }
+          healthStore.save(sample!) { (success, error) in
+           DispatchQueue.main.async {
+            return
+            }
+        }
+}
+     //MARK: 12 OZ Button
     @IBAction func twelveOzAction() {
         WKInterfaceDevice.current().play(.success)
         let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
-               let caffeineAmount = Int(12.0)
-               let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
-               let now = Date()
-               let startDate = now.addingTimeInterval(-60)
-               let endDate = now
-              
-               let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
-             
-               var sample: HKQuantitySample? = nil
-               if let caffeineQuantityType = caffeineQuantityType {
-                   sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
-               }
+        let caffeineAmount = Int(12.0)
+        let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
+        var sample: HKQuantitySample? = nil
+        if let caffeineQuantityType = caffeineQuantityType {
+          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        }
                healthStore.save(sample!) { (success, error) in
-                   DispatchQueue.main.async {
-                       return
-                   }
-                   
-                   
-               }
+                 DispatchQueue.main.async {
+                 return
+              }
+         }
     }
+     //MARK: 18 OZ Button
     @IBAction func OzAction() {
         WKInterfaceDevice.current().play(.success)
         let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
-               let caffeineAmount = Int(18.0)
-               let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
-               let now = Date()
-               let startDate = now.addingTimeInterval(-60)
-               let endDate = now
-              
-               let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
-             
-               var sample: HKQuantitySample? = nil
-               if let caffeineQuantityType = caffeineQuantityType {
-                   sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        let caffeineAmount = Int(18.0)
+        let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
+        var sample: HKQuantitySample? = nil
+        if let caffeineQuantityType = caffeineQuantityType {
+          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        }
+            healthStore.save(sample!) { (success, error) in
+              DispatchQueue.main.async {
+              return
                }
-               healthStore.save(sample!) { (success, error) in
-                   DispatchQueue.main.async {
-                       return
-                   }
-                   
-                   
-               }
+          }
     }
+     //MARK: 22 OZ Button
     @IBAction func twentytwoOzAction() {
         WKInterfaceDevice.current().play(.success)
-                let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
-               let caffeineAmount = Int(22.0)
-                let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
-                let now = Date()
-               let startDate = now.addingTimeInterval(-60)
-               let endDate = now
-              
-               let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
-             
-               var sample: HKQuantitySample? = nil
-               if let caffeineQuantityType = caffeineQuantityType {
-                   sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
-               }
-               healthStore.save(sample!) { (success, error) in
-                   DispatchQueue.main.async {
-                       return
+        let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
+        let caffeineAmount = Int(22.0)
+        let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
+        var sample: HKQuantitySample? = nil
+        if let caffeineQuantityType = caffeineQuantityType {
+          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        }
+             healthStore.save(sample!) { (success, error) in
+               DispatchQueue.main.async {
+               return
                    }
-                   
-                   
-               }
+            }
     }
+     //MARK: 32 OZ Button
     @IBAction func thirtytwoOzAction() {
         WKInterfaceDevice.current().play(.success)
         let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
-               let caffeineAmount = Int(32.0)
-               let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
-                let now = Date()
-               let startDate = now.addingTimeInterval(-60)
-               let endDate = now
-              
-               let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
-             
-               var sample: HKQuantitySample? = nil
-               if let caffeineQuantityType = caffeineQuantityType {
-                   sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
-               }
+        let caffeineAmount = Int(32.0)
+        let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
+        var sample: HKQuantitySample? = nil
+        if let caffeineQuantityType = caffeineQuantityType {
+          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        }
                healthStore.save(sample!) { (success, error) in
-                   DispatchQueue.main.async {
-                       return
+                 DispatchQueue.main.async {
+                 return
                    }
-                   
-                   
-               }
+          }
     }
+     //MARK: 40 OZ Button
     @IBAction func fortyOzAction() {
         WKInterfaceDevice.current().play(.success)
         let caffeineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)
-               let caffeineAmount = Int(40.0)
-               let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
-                let now = Date()
-               let startDate = now.addingTimeInterval(-60)
-               let endDate = now
-              
-               let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
-             
-               var sample: HKQuantitySample? = nil
-               if let caffeineQuantityType = caffeineQuantityType {
-                   sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
-               }
+        let caffeineAmount = Int(40.0)
+        let unit = HKUnit.gramUnit(with: HKMetricPrefix.milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantity = HKQuantity(unit: unit, doubleValue: Double(caffeineAmount))
+        var sample: HKQuantitySample? = nil
+        if let caffeineQuantityType = caffeineQuantityType {
+          sample = HKQuantitySample(type: caffeineQuantityType, quantity: quantity, start: startDate, end: endDate)
+        }
                healthStore.save(sample!) { (success, error) in
-                   DispatchQueue.main.async {
-                       return
+                 DispatchQueue.main.async {
+                 return
                    }
-                   
-                   
                }
-    }
+        }
 }

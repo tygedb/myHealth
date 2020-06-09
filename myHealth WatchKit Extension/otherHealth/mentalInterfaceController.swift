@@ -14,6 +14,7 @@ class mentalInterfaceController: WKInterfaceController {
     let healthStore = HKHealthStore()
     var timer = Timer()
     var intCounter: Int = 0
+    var timeLeft = 120
 
     @IBOutlet weak var timeLabel: WKInterfaceLabel!
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
@@ -31,11 +32,20 @@ class mentalInterfaceController: WKInterfaceController {
     }
    
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+        // This method is called when watch view controller is about to be visible to use
         super.willActivate()
     }
 
     override func didDeactivate() {
+        let fireDate = Date(timeIntervalSinceNow: 10)
+        
+             WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (error) in
+                        if (error == nil) {
+                            print("SUCCESS")
+                        }
+                        
+                        
+                    }
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
@@ -105,10 +115,10 @@ class mentalInterfaceController: WKInterfaceController {
     
    
     @IBAction func startBreathe() {
+      
         WKInterfaceDevice.current().play(.start)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
-        WKInterfaceDevice.current().play(.directionUp)
-    
+       
     }
     
     @IBAction func stopBreathe() {
@@ -118,18 +128,25 @@ class mentalInterfaceController: WKInterfaceController {
         self.saveMindfullAnalysis(startTime: startTime, endTime: endTime)
         timer.invalidate()
         timeLabel.setText("00:00")
-       
+
         //Update timer
        
     }
     
-    @objc func onTimerFires()
-       {
-           intCounter += 1
-         
+    @objc func onTimerFires() {
+        intCounter += 1
         timeLabel.setText(String(format:"%02d:%02d", (intCounter % 3600) / 60, (intCounter % 3600) % 60))
            
-     
+        if timeLeft >= 60 {
+//            WKInterfaceDevice.current().play(.stop)
+//                   let startTime = Date()
+//                   let endTime = startTime.addingTimeInterval(1.0 * 60.0)
+//                   self.saveMindfullAnalysis(startTime: startTime, endTime: endTime)
+//                    timer.invalidate()
+//                   timeLabel.setText("00:00")
+                  
+        }
+
        }
     
     func saveMindfullAnalysis(startTime: Date, endTime: Date) {

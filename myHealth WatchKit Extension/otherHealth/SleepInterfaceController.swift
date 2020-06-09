@@ -29,8 +29,8 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         session.delegate = self
         session = WKExtendedRuntimeSession()
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
-        batteryLife.setText("\(WKInterfaceDevice.current().batteryLevel)%")
-        batteryLife.setTextColor(.red)
+//        batteryLife.setText("\(WKInterfaceDevice.current().batteryLevel.binade)%")
+//        batteryLife.setTextColor(.red)
         let typesToRead = Set([HKObjectType.categoryType(forIdentifier: .sleepAnalysis)])
         
         let typesToWrite = Set([HKObjectType.categoryType(forIdentifier: .sleepAnalysis)])
@@ -52,11 +52,19 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         session.start()
         session.delegate = self
         WKInterfaceDevice.current().play(.start)
+        let fireDate = Date(timeIntervalSinceNow: 20)
         alarmTime = Date()
         if (!timer.isValid) {
             let aSelector : Selector = #selector(SleepInterfaceController.updateTimer)
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = Date.timeIntervalSinceReferenceDate
+        }
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (error) in
+            if (error == nil) {
+                print("SUCCESS")
+            }
+            
+            
         }
         
     }

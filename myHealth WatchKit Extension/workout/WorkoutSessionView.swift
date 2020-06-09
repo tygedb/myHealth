@@ -227,7 +227,7 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
                    let roundedValue = Double( round( 1 * value! ) / 1 )
                    label.setText("\(roundedValue) BPM")
                case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
-                   let energyUnit = HKUnit.kilocalorie()
+                   let energyUnit = HKUnit.largeCalorie()
                    let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
                    let roundedValue = Double( round( 1 * value! ) / 1 )
                    label.setText("\(roundedValue) cal")

@@ -18,12 +18,13 @@ class toothbrushInterfaceController: WKInterfaceController {
     var startTime = TimeInterval()
     var endTime = Date()
     var alarmTime = Date()
+    let toothbrush = HKQuantityType.categoryType(forIdentifier: .toothbrushingEvent)
     let healthStore = HKHealthStore()
+    var backGroundTask = WKApplicationRefreshBackgroundTask()
     @IBOutlet weak var timeLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         
         func activateHealthKit() {
         let typesToRead = Set ([
@@ -52,7 +53,31 @@ class toothbrushInterfaceController: WKInterfaceController {
     
     @IBAction func start() {
         WKInterfaceDevice.current().play(.start)
+        let fireDate = Date(timeIntervalSinceNow: 10)
+//        let tBrushQuantityType = HKCategoryType.categoryType(forIdentifier: .toothbrushingEvent)
+//        let tbAmount = 2
+//        let unit = HKUnit.minute()
+//        let now = Date()
+//        let startDate = now.addingTimeInterval(-60)
+//        let endDate = now
+        
+//        let quantity = HKQuantity(unit: unit, doubleValue: Double(tbAmount))
+//        var sample = HKCategoryValue(quantity)
+//
+//
+//        if let tbrushQuantityType = tBrushQuantityType {
+//            sample = HKCategorySample(type: tbrushQuantityType, value: 2, start: startDate, end: endDate)
+//        }
+        
        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+       
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (error) in
+            if (error == nil) {
+                print("SUCCESS")
+            }
+            
+            
+        }
         
     }
     func timeString(time: TimeInterval) -> String {
@@ -62,6 +87,7 @@ class toothbrushInterfaceController: WKInterfaceController {
              // return formated string
              return String(format: "%02i:%02i", minute, second)
          }
+    
 @objc func onTimerFires()
 {
     timeLeft -= 1
@@ -76,6 +102,7 @@ class toothbrushInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+       
         super.willActivate()
     }
 
@@ -84,8 +111,5 @@ class toothbrushInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    
-  func scheduleBackgroundRefresh(withPreferredDate preferredFireDate: Date, userInfo: (NSSecureCoding & NSObjectProtocol)?,scheduledCompletion: @escaping (Error?) -> Void) {
-    
-    }
+
 }
