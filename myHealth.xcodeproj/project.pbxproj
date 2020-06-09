@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A09F863248B559D00C7911F /* CaffeineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */; };
+		2A2118ED248486D00057AB8D /* SleepInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */; };
+		2A2F045724801480002DF1B5 /* WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */; };
+		2A45B60B248CB0CB005F83DC /* toothbrushInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45B60A248CB0CB005F83DC /* toothbrushInterfaceController.swift */; };
+		2A4A0669247DCA2B00894F25 /* WaterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A0668247DCA2B00894F25 /* WaterInterfaceController.swift */; };
+		2A4E82F024883D98009747B1 /* FoodInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E82EF24883D98009747B1 /* FoodInterfaceController.swift */; };
+		2A5AC2FC2477038000F29F36 /* myHealth.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2A5AC2FB2477038000F29F36 /* myHealth.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A5AC3022477038000F29F36 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5AC3002477038000F29F36 /* Interface.storyboard */; };
+		2A5AC3042477038400F29F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5AC3032477038400F29F36 /* Assets.xcassets */; };
+		2A5AC30B2477038400F29F36 /* myHealth.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A5AC30A2477038400F29F36 /* myHealth.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A5AC3102477038400F29F36 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AC30F2477038400F29F36 /* InterfaceController.swift */; };
+		2A5AC3122477038400F29F36 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AC3112477038400F29F36 /* ExtensionDelegate.swift */; };
+		2A5AC3142477038400F29F36 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AC3132477038400F29F36 /* NotificationController.swift */; };
+		2A5AC32A247708FE00F29F36 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5AC329247708FE00F29F36 /* HealthKit.framework */; };
+		2A938521248D94D6005965B7 /* yogaSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938520248D94D6005965B7 /* yogaSessionView.swift */; };
+		2A938523248D94FA005965B7 /* yogaSessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938522248D94FA005965B7 /* yogaSessionContext.swift */; };
+		2A938525248DAD18005965B7 /* ellipticalSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938524248DAD18005965B7 /* ellipticalSessionView.swift */; };
+		2A938527248DAD61005965B7 /* ellipticalSessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938526248DAD61005965B7 /* ellipticalSessionContext.swift */; };
+		2A9AFAA7248B6A4400561A73 /* AlertNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9AFAA6248B6A4400561A73 /* AlertNotificationController.swift */; };
+		2AAE873D2480579000E0A279 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE873C2480579000E0A279 /* HealthKitManager.swift */; };
+		2AEF8745247DB8FA008638D8 /* mentalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF8744247DB8FA008638D8 /* mentalInterfaceController.swift */; };
+		2AF5EC33247CD2E3004EAA5A /* WorkOutSessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5EC32247CD2E3004EAA5A /* WorkOutSessionContext.swift */; };
+		2AF5EC35247D028E004EAA5A /* NutritionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5EC34247D028E004EAA5A /* NutritionInterfaceController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A5AC2FD2477038000F29F36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5AC2F12477038000F29F36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5AC2FA2477038000F29F36;
+			remoteInfo = "myHealth WatchKit App";
+		};
+		2A5AC30C2477038400F29F36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5AC2F12477038000F29F36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5AC3092477038400F29F36;
+			remoteInfo = "myHealth WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A5AC3202477038400F29F36 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A5AC30B2477038400F29F36 /* myHealth.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5AC3242477038400F29F36 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2A5AC2FC2477038000F29F36 /* myHealth.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineInterfaceController.swift; sourceTree = "<group>"; };
+		2A1626D42490291400F6275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A1626D62490297E00F6275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepInterfaceController.swift; sourceTree = "<group>"; };
+		2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionView.swift; sourceTree = "<group>"; };
+		2A45B60A248CB0CB005F83DC /* toothbrushInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toothbrushInterfaceController.swift; sourceTree = "<group>"; };
+		2A4A0668247DCA2B00894F25 /* WaterInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterInterfaceController.swift; sourceTree = "<group>"; };
+		2A4E82EF24883D98009747B1 /* FoodInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInterfaceController.swift; sourceTree = "<group>"; };
+		2A5AC2F72477038000F29F36 /* myHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5AC2FB2477038000F29F36 /* myHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5AC3012477038000F29F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2A5AC3032477038400F29F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5AC30A2477038400F29F36 /* myHealth.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = myHealth.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5AC30F2477038400F29F36 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2A5AC3112477038400F29F36 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		2A5AC3132477038400F29F36 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2A5AC3172477038400F29F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5AC31A2477038400F29F36 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		2A5AC329247708FE00F29F36 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		2A5AC32B2477097200F29F36 /* myHealth WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		2A938520248D94D6005965B7 /* yogaSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaSessionView.swift; sourceTree = "<group>"; };
+		2A938522248D94FA005965B7 /* yogaSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaSessionContext.swift; sourceTree = "<group>"; };
+		2A938524248DAD18005965B7 /* ellipticalSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ellipticalSessionView.swift; sourceTree = "<group>"; };
+		2A938526248DAD61005965B7 /* ellipticalSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ellipticalSessionContext.swift; sourceTree = "<group>"; };
+		2A9AFAA6248B6A4400561A73 /* AlertNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertNotificationController.swift; sourceTree = "<group>"; };
+		2AAE873C2480579000E0A279 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		2AEF8744247DB8FA008638D8 /* mentalInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mentalInterfaceController.swift; sourceTree = "<group>"; };
+		2AF5EC32247CD2E3004EAA5A /* WorkOutSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutSessionContext.swift; sourceTree = "<group>"; };
+		2AF5EC34247D028E004EAA5A /* NutritionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NutritionInterfaceController.swift; path = "myHealth WatchKit Extension/Food/NutritionInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14C3D36EB7566EF20993A332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5AC3072477038400F29F36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5AC32A247708FE00F29F36 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FD876DF3E1858B2353C7C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A5AC2F02477038000F29F36 = {
+			isa = PBXGroup;
+			children = (
+				2A5AC2FF2477038000F29F36 /* myHealth WatchKit App */,
+				2A5AC30E2477038400F29F36 /* myHealth WatchKit Extension */,
+				2A5AC2F82477038000F29F36 /* Products */,
+				2A5AC328247708FD00F29F36 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2A5AC2F82477038000F29F36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A5AC2F72477038000F29F36 /* myHealth.app */,
+				2A5AC2FB2477038000F29F36 /* myHealth.app */,
+				2A5AC30A2477038400F29F36 /* myHealth.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A5AC2FF2477038000F29F36 /* myHealth WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				2A5AC3002477038000F29F36 /* Interface.storyboard */,
+				2A5AC3032477038400F29F36 /* Assets.xcassets */,
+				2A1626D62490297E00F6275C /* Info.plist */,
+			);
+			path = "myHealth WatchKit App";
+			sourceTree = "<group>";
+		};
+		2A5AC30E2477038400F29F36 /* myHealth WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A5AC30F2477038400F29F36 /* InterfaceController.swift */,
+				2A5AC32B2477097200F29F36 /* myHealth WatchKit Extension.entitlements */,
+				2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */,
+				2A5AC3172477038400F29F36 /* Assets.xcassets */,
+				2A7FCE90248CA252000C44ED /* workout */,
+				2A5F077A24883585002D79C9 /* Food */,
+				2A938528248DC6D9005965B7 /* otherHealth */,
+				2A938529248DC703005965B7 /* Other */,
+				2A1626D42490291400F6275C /* Info.plist */,
+			);
+			path = "myHealth WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		2A5AC328247708FD00F29F36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A5AC329247708FE00F29F36 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A5F077A24883585002D79C9 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5EC34247D028E004EAA5A /* NutritionInterfaceController.swift */,
+				2A4A0668247DCA2B00894F25 /* WaterInterfaceController.swift */,
+				2A4E82EF24883D98009747B1 /* FoodInterfaceController.swift */,
+				2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		2A7FCE90248CA252000C44ED /* workout */ = {
+			isa = PBXGroup;
+			children = (
+				2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */,
+				2AF5EC32247CD2E3004EAA5A /* WorkOutSessionContext.swift */,
+				2A938520248D94D6005965B7 /* yogaSessionView.swift */,
+				2A938522248D94FA005965B7 /* yogaSessionContext.swift */,
+				2A938524248DAD18005965B7 /* ellipticalSessionView.swift */,
+				2A938526248DAD61005965B7 /* ellipticalSessionContext.swift */,
+			);
+			path = workout;
+			sourceTree = "<group>";
+		};
+		2A938528248DC6D9005965B7 /* otherHealth */ = {
+			isa = PBXGroup;
+			children = (
+				2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */,
+				2AEF8744247DB8FA008638D8 /* mentalInterfaceController.swift */,
+				2A45B60A248CB0CB005F83DC /* toothbrushInterfaceController.swift */,
+			);
+			path = otherHealth;
+			sourceTree = "<group>";
+		};
+		2A938529248DC703005965B7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2A5AC31A2477038400F29F36 /* PushNotificationPayload.apns */,
+				2A5AC3112477038400F29F36 /* ExtensionDelegate.swift */,
+				2A5AC3132477038400F29F36 /* NotificationController.swift */,
+				2AAE873C2480579000E0A279 /* HealthKitManager.swift */,
+				2A9AFAA6248B6A4400561A73 /* AlertNotificationController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A5AC2F62477038000F29F36 /* myHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5AC3252477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth" */;
+			buildPhases = (
+				2A5AC2F52477038000F29F36 /* Resources */,
+				2A5AC3242477038400F29F36 /* Embed Watch Content */,
+				89FD876DF3E1858B2353C7C9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A5AC2FE2477038000F29F36 /* PBXTargetDependency */,
+			);
+			name = myHealth;
+			productName = myHealth;
+			productReference = 2A5AC2F72477038000F29F36 /* myHealth.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		2A5AC2FA2477038000F29F36 /* myHealth WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5AC3212477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth WatchKit App" */;
+			buildPhases = (
+				2A5AC2F92477038000F29F36 /* Resources */,
+				2A5AC3202477038400F29F36 /* Embed App Extensions */,
+				14C3D36EB7566EF20993A332 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A5AC30D2477038400F29F36 /* PBXTargetDependency */,
+			);
+			name = "myHealth WatchKit App";
+			productName = "myHealth WatchKit App";
+			productReference = 2A5AC2FB2477038000F29F36 /* myHealth.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2A5AC3092477038400F29F36 /* myHealth WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5AC31D2477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth WatchKit Extension" */;
+			buildPhases = (
+				2A5AC3062477038400F29F36 /* Sources */,
+				2A5AC3072477038400F29F36 /* Frameworks */,
+				2A5AC3082477038400F29F36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "myHealth WatchKit Extension";
+			productName = "myHealth WatchKit Extension";
+			productReference = 2A5AC30A2477038400F29F36 /* myHealth.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A5AC2F12477038000F29F36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Tyge Bellinger";
+				TargetAttributes = {
+					2A5AC2F62477038000F29F36 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					2A5AC2FA2477038000F29F36 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					2A5AC3092477038400F29F36 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2A5AC2F42477038000F29F36 /* Build configuration list for PBXProject "myHealth" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A5AC2F02477038000F29F36;
+			productRefGroup = 2A5AC2F82477038000F29F36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A5AC2F62477038000F29F36 /* myHealth */,
+				2A5AC2FA2477038000F29F36 /* myHealth WatchKit App */,
+				2A5AC3092477038400F29F36 /* myHealth WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A5AC2F52477038000F29F36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5AC2F92477038000F29F36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5AC3042477038400F29F36 /* Assets.xcassets in Resources */,
+				2A5AC3022477038000F29F36 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5AC3082477038400F29F36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A5AC3062477038400F29F36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AEF8745247DB8FA008638D8 /* mentalInterfaceController.swift in Sources */,
+				2A45B60B248CB0CB005F83DC /* toothbrushInterfaceController.swift in Sources */,
+				2AAE873D2480579000E0A279 /* HealthKitManager.swift in Sources */,
+				2AF5EC33247CD2E3004EAA5A /* WorkOutSessionContext.swift in Sources */,
+				2A5AC3142477038400F29F36 /* NotificationController.swift in Sources */,
+				2A2118ED248486D00057AB8D /* SleepInterfaceController.swift in Sources */,
+				2A4E82F024883D98009747B1 /* FoodInterfaceController.swift in Sources */,
+				2A4A0669247DCA2B00894F25 /* WaterInterfaceController.swift in Sources */,
+				2A938525248DAD18005965B7 /* ellipticalSessionView.swift in Sources */,
+				2A938521248D94D6005965B7 /* yogaSessionView.swift in Sources */,
+				2AF5EC35247D028E004EAA5A /* NutritionInterfaceController.swift in Sources */,
+				2A938527248DAD61005965B7 /* ellipticalSessionContext.swift in Sources */,
+				2A09F863248B559D00C7911F /* CaffeineInterfaceController.swift in Sources */,
+				2A2F045724801480002DF1B5 /* WorkoutSessionView.swift in Sources */,
+				2A938523248D94FA005965B7 /* yogaSessionContext.swift in Sources */,
+				2A9AFAA7248B6A4400561A73 /* AlertNotificationController.swift in Sources */,
+				2A5AC3122477038400F29F36 /* ExtensionDelegate.swift in Sources */,
+				2A5AC3102477038400F29F36 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A5AC2FE2477038000F29F36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5AC2FA2477038000F29F36 /* myHealth WatchKit App */;
+			targetProxy = 2A5AC2FD2477038000F29F36 /* PBXContainerItemProxy */;
+		};
+		2A5AC30D2477038400F29F36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5AC3092477038400F29F36 /* myHealth WatchKit Extension */;
+			targetProxy = 2A5AC30C2477038400F29F36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A5AC3002477038000F29F36 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A5AC3012477038000F29F36 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A5AC31B2477038400F29F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tyge Bellinger (GQ37QHB6MK)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_MODULE = "";
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		2A5AC31C2477038400F29F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Tyge Bellinger (GQ37QHB6MK)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_MODULE = "";
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		2A5AC31E2477038400F29F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "myHealth WatchKit Extension/myHealth WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyge.myHealth.watchkitapp.watchkitextension;
+				PRODUCT_NAME = myHealth;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		2A5AC31F2477038400F29F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "myHealth WatchKit Extension/myHealth WatchKit ExtensionRelease.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyge.myHealth.watchkitapp.watchkitextension;
+				PRODUCT_NAME = myHealth;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		2A5AC3222477038400F29F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				IBSC_MODULE = "";
+				INFOPLIST_FILE = "myHealth WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyge.myHealth.watchkitapp;
+				PRODUCT_NAME = myHealth;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		2A5AC3232477038400F29F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				IBSC_MODULE = "";
+				INFOPLIST_FILE = "myHealth WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyge.myHealth.watchkitapp;
+				PRODUCT_NAME = myHealth;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		2A5AC3262477038400F29F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				INFOPLIST_FILE = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyge.myHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2A5AC3272477038400F29F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				INFOPLIST_FILE = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyge.myHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A5AC2F42477038000F29F36 /* Build configuration list for PBXProject "myHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5AC31B2477038400F29F36 /* Debug */,
+				2A5AC31C2477038400F29F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5AC31D2477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5AC31E2477038400F29F36 /* Debug */,
+				2A5AC31F2477038400F29F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5AC3212477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5AC3222477038400F29F36 /* Debug */,
+				2A5AC3232477038400F29F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5AC3252477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5AC3262477038400F29F36 /* Debug */,
+				2A5AC3272477038400F29F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A5AC2F12477038000F29F36 /* Project object */;
+}
