@@ -32,8 +32,8 @@ class NutritionInterfaceController: WKInterfaceController {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         
         
-        if segueIdentifier == "breakfast" {
-            self.presentController(withName: "addFood", context: nil)
+        if segueIdentifier == "heartFood" {
+            self.presentController(withName: "heartFood", context: nil)
             
            
         }
@@ -46,6 +46,9 @@ class NutritionInterfaceController: WKInterfaceController {
         if segueIdentifier == "dinner" {
             self.presentController(withName: "addFood", context: nil)
             
+        }
+        if segueIdentifier == "manual" {
+            self.presentController(withName: "manual", context: nil)
         }
          return nil
     }

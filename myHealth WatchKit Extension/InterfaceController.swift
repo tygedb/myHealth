@@ -93,13 +93,10 @@ class InterfaceController: WKInterfaceController {
     }
     @IBAction func MentalHealth() {
         WKInterfaceDevice.current().play(.click)
-        self.presentController(withName: "Mental", context: nil)
+        self.presentController(withNames: ["Mental", "Sleep"], contexts: nil)
     }
     
-    @IBAction func Sleep() {
-        WKInterfaceDevice.current().play(.click)
-        self.presentController(withName: "Sleep", context: nil)
-    }
+  
     @IBAction func toothbrush() {
         WKInterfaceDevice.current().play(.click)
         self.presentController(withName: "toothbrush", context: nil)

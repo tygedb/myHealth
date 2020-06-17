@@ -23,25 +23,83 @@ class FoodInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         let typesToWrite: Set = [
- 
             HKObjectType.quantityType(forIdentifier: .dietaryCarbohydrates),
             HKObjectType.quantityType(forIdentifier: .dietaryFatTotal),
             HKObjectType.quantityType(forIdentifier: .dietaryProtein),
             HKObjectType.quantityType(forIdentifier: .dietarySugar),
             HKObjectType.quantityType(forIdentifier: .dietaryFiber),
             HKObjectType.quantityType(forIdentifier: .dietaryCalcium),
-            HKObjectType.quantityType(forIdentifier: .dietaryIron)
-        
+            HKObjectType.quantityType(forIdentifier: .dietaryIron),
+            
+            HKObjectType.quantityType(forIdentifier: .dietaryCopper),
+            HKObjectType.quantityType(forIdentifier: .dietaryFolate),
+            HKObjectType.quantityType(forIdentifier: .dietaryNiacin),
+            HKObjectType.quantityType(forIdentifier: .dietaryPotassium),
+            HKObjectType.quantityType(forIdentifier: .dietaryRiboflavin),
+            HKObjectType.quantityType(forIdentifier: .dietaryThiamin),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminA),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminC),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminB6),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminB12),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminD),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminE),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminK),
+            HKObjectType.quantityType(forIdentifier: .dietaryCholesterol),
+            HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed),
+            HKObjectType.quantityType(forIdentifier: .dietaryFatSaturated),
+            HKObjectType.quantityType(forIdentifier: .dietaryFatMonounsaturated),
+            HKObjectType.quantityType(forIdentifier: .dietaryFatPolyunsaturated),
+            HKObjectType.quantityType(forIdentifier: .dietaryBiotin),
+            HKObjectType.quantityType(forIdentifier: .dietaryChloride),
+            HKObjectType.quantityType(forIdentifier: .dietaryChromium),
+            HKObjectType.quantityType(forIdentifier: .dietaryIodine),
+            HKObjectType.quantityType(forIdentifier: .dietaryMagnesium),
+            HKObjectType.quantityType(forIdentifier: .dietaryManganese),
+            HKObjectType.quantityType(forIdentifier: .dietaryMolybdenum),
+            HKObjectType.quantityType(forIdentifier: .dietaryPantothenicAcid),
+            HKObjectType.quantityType(forIdentifier: .dietaryPhosphorus),
+            HKObjectType.quantityType(forIdentifier: .dietarySelenium),
+            HKObjectType.quantityType(forIdentifier: .dietaryZinc)
         ]
         
         let typesToRead: Set = [
             HKObjectType.quantityType(forIdentifier: .dietaryCarbohydrates),
-                      HKObjectType.quantityType(forIdentifier: .dietaryFatTotal),
-                      HKObjectType.quantityType(forIdentifier: .dietaryProtein),
-                      HKObjectType.quantityType(forIdentifier: .dietarySugar),
-                      HKObjectType.quantityType(forIdentifier: .dietaryFiber),
-                      HKObjectType.quantityType(forIdentifier: .dietaryCalcium),
-                      HKObjectType.quantityType(forIdentifier: .dietaryIron)
+            HKObjectType.quantityType(forIdentifier: .dietaryFatTotal),
+            HKObjectType.quantityType(forIdentifier: .dietaryProtein),
+            HKObjectType.quantityType(forIdentifier: .dietarySugar),
+            HKObjectType.quantityType(forIdentifier: .dietaryFiber),
+            HKObjectType.quantityType(forIdentifier: .dietaryCalcium),
+            HKObjectType.quantityType(forIdentifier: .dietaryIron),
+            
+            HKObjectType.quantityType(forIdentifier: .dietaryCopper),
+            HKObjectType.quantityType(forIdentifier: .dietaryFolate),
+            HKObjectType.quantityType(forIdentifier: .dietaryNiacin),
+            HKObjectType.quantityType(forIdentifier: .dietaryPotassium),
+            HKObjectType.quantityType(forIdentifier: .dietaryRiboflavin),
+            HKObjectType.quantityType(forIdentifier: .dietaryThiamin),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminA),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminC),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminB6),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminB12),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminD),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminE),
+            HKObjectType.quantityType(forIdentifier: .dietaryVitaminK),
+            HKObjectType.quantityType(forIdentifier: .dietaryCholesterol),
+            HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed),
+            HKObjectType.quantityType(forIdentifier: .dietaryFatSaturated),
+            HKObjectType.quantityType(forIdentifier: .dietaryFatMonounsaturated),
+            HKObjectType.quantityType(forIdentifier: .dietaryFatPolyunsaturated),
+            HKObjectType.quantityType(forIdentifier: .dietaryBiotin),
+            HKObjectType.quantityType(forIdentifier: .dietaryChloride),
+            HKObjectType.quantityType(forIdentifier: .dietaryChromium),
+            HKObjectType.quantityType(forIdentifier: .dietaryIodine),
+            HKObjectType.quantityType(forIdentifier: .dietaryMagnesium),
+            HKObjectType.quantityType(forIdentifier: .dietaryManganese),
+            HKObjectType.quantityType(forIdentifier: .dietaryMolybdenum),
+            HKObjectType.quantityType(forIdentifier: .dietaryPantothenicAcid),
+            HKObjectType.quantityType(forIdentifier: .dietaryPhosphorus),
+            HKObjectType.quantityType(forIdentifier: .dietarySelenium),
+            HKObjectType.quantityType(forIdentifier: .dietaryZinc)
        ]
         healthStore.requestAuthorization(toShare: (typesToWrite as! Set<HKSampleType>), read: (typesToRead as! Set<HKObjectType>)) { (success, error) in
         }

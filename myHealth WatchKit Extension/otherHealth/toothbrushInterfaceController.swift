@@ -27,7 +27,7 @@ class toothbrushInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         func activateHealthKit() {
-        let typesToRead = Set ([
+        let typesToRead = Set([
         
             HKObjectType.categoryType(forIdentifier: .toothbrushingEvent)
         
