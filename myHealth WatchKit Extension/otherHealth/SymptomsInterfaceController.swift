@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import HealthKit
+@available(watchOSApplicationExtension 7.0, *)
 class SymptomsInterfaceController: WKInterfaceController {
 
     let healthStore = HKHealthStore()
@@ -16,34 +17,92 @@ class SymptomsInterfaceController: WKInterfaceController {
   
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-          
-        if #available(iOS 13.6, *) {
-        
-                  } else {
-                  
-                  }
+                HKCategoryType.categoryType(forIdentifier: .abdominalCramps)
+                HKCategoryType.categoryType(forIdentifier: .bladderIncontinence)
+                HKCategoryType.categoryType(forIdentifier: .bloating)
+                HKCategoryType.categoryType(forIdentifier: .vomiting)
+                HKCategoryType.categoryType(forIdentifier: .breastPain)
+                HKCategoryType.categoryType(forIdentifier: .chestTightnessOrPain)
+                HKCategoryType.categoryType(forIdentifier: .coughing)
+                HKCategoryType.categoryType(forIdentifier: .vomiting)
+                HKCategoryType.categoryType(forIdentifier: .chills)
+                HKCategoryType.categoryType(forIdentifier: .constipation)
+                HKCategoryType.categoryType(forIdentifier: .diarrhea)
+                HKCategoryType.categoryType(forIdentifier: .dizziness)
+                HKCategoryType.categoryType(forIdentifier: .fainting)
+                HKCategoryType.categoryType(forIdentifier: .fatigue)
+                HKCategoryType.categoryType(forIdentifier: .fever)
+                HKCategoryType.categoryType(forIdentifier: .lossOfSmell)
+                HKCategoryType.categoryType(forIdentifier: .lossOfTaste)
+                HKCategoryType.categoryType(forIdentifier: .headache)
+                HKCategoryType.categoryType(forIdentifier: .heartburn)
+                
+
+                // Fallback on earlier versions
+            
            func activateHealthKit() {
                 let typesToShare: Set = [
            
-                      HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-        
+                    HKCategoryType.categoryType(forIdentifier: .abdominalCramps),
+                    HKCategoryType.categoryType(forIdentifier: .bladderIncontinence),
+                    HKCategoryType.categoryType(forIdentifier: .bloating),
+                    HKCategoryType.categoryType(forIdentifier: .vomiting),
+                    HKCategoryType.categoryType(forIdentifier: .breastPain),
+                    HKCategoryType.categoryType(forIdentifier: .chestTightnessOrPain),
+                    HKCategoryType.categoryType(forIdentifier: .coughing),
+                    HKCategoryType.categoryType(forIdentifier: .vomiting),
+                    HKCategoryType.categoryType(forIdentifier: .chills),
+                    HKCategoryType.categoryType(forIdentifier: .constipation),
+                    HKCategoryType.categoryType(forIdentifier: .diarrhea),
+                    HKCategoryType.categoryType(forIdentifier: .dizziness),
+                    HKCategoryType.categoryType(forIdentifier: .fainting),
+                    HKCategoryType.categoryType(forIdentifier: .fatigue),
+                    HKCategoryType.categoryType(forIdentifier: .fever),
+                    HKCategoryType.categoryType(forIdentifier: .lossOfSmell),
+                    HKCategoryType.categoryType(forIdentifier: .lossOfTaste),
+                    HKCategoryType.categoryType(forIdentifier: .headache),
+                    HKCategoryType.categoryType(forIdentifier: .heartburn)
 
                ]
                
                // The quantity types to read from the health store.
                let typesToRead: Set = [
-                   HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-                   HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                   HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                HKCategoryType.categoryType(forIdentifier: .abdominalCramps),
+                HKCategoryType.categoryType(forIdentifier: .bladderIncontinence),
+                HKCategoryType.categoryType(forIdentifier: .bloating),
+                HKCategoryType.categoryType(forIdentifier: .vomiting),
+                HKCategoryType.categoryType(forIdentifier: .breastPain),
+                HKCategoryType.categoryType(forIdentifier: .chestTightnessOrPain),
+                HKCategoryType.categoryType(forIdentifier: .coughing),
+                HKCategoryType.categoryType(forIdentifier: .vomiting),
+                HKCategoryType.categoryType(forIdentifier: .chills),
+                HKCategoryType.categoryType(forIdentifier: .constipation),
+                HKCategoryType.categoryType(forIdentifier: .diarrhea),
+                HKCategoryType.categoryType(forIdentifier: .dizziness),
+                HKCategoryType.categoryType(forIdentifier: .fainting),
+                HKCategoryType.categoryType(forIdentifier: .fatigue),
+                HKCategoryType.categoryType(forIdentifier: .fever),
+                HKCategoryType.categoryType(forIdentifier: .lossOfSmell),
+                HKCategoryType.categoryType(forIdentifier: .lossOfTaste),
+                HKCategoryType.categoryType(forIdentifier: .headache),
+                HKCategoryType.categoryType(forIdentifier: .heartburn)
                    
                  
                ]
-            healthStore.requestAuthorization(toShare: (typesToShare as Set<HKSampleType>), read: (typesToRead as Set<HKObjectType>)) { (success, error) -> Void in
+            healthStore.requestAuthorization(toShare: (typesToShare as! Set<HKSampleType>), read: (typesToRead as! Set<HKObjectType>)) { (success, error) -> Void in
            }
         }
         
     }
 
+    @IBAction func heartBurn() {
+        var heartBurnNP = HKCategoryType.categoryType(forIdentifier: .heartburn)
+        let hBNP = HKCategoryValueSeverity.notPresent
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        
+    }
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -53,5 +112,6 @@ class SymptomsInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+
 
 }

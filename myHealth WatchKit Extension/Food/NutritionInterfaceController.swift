@@ -48,7 +48,8 @@ class NutritionInterfaceController: WKInterfaceController {
             
         }
         if segueIdentifier == "manual" {
-            self.presentController(withName: "manual", context: nil)
+            self.presentController(withNames: ["manualOne", "manualTwo", "manualThree", "manualFour", "manualFive", "manualSix", "manualSeven"], contexts: nil)
+            
         }
          return nil
     }

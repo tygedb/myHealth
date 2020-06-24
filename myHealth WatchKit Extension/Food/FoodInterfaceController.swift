@@ -70,8 +70,9 @@ class FoodInterfaceController: WKInterfaceController {
             HKObjectType.quantityType(forIdentifier: .dietaryFiber),
             HKObjectType.quantityType(forIdentifier: .dietaryCalcium),
             HKObjectType.quantityType(forIdentifier: .dietaryIron),
-            
+            HKObjectType.quantityType(forIdentifier: .dietaryBiotin),
             HKObjectType.quantityType(forIdentifier: .dietaryCopper),
+            
             HKObjectType.quantityType(forIdentifier: .dietaryFolate),
             HKObjectType.quantityType(forIdentifier: .dietaryNiacin),
             HKObjectType.quantityType(forIdentifier: .dietaryPotassium),
@@ -89,7 +90,6 @@ class FoodInterfaceController: WKInterfaceController {
             HKObjectType.quantityType(forIdentifier: .dietaryFatSaturated),
             HKObjectType.quantityType(forIdentifier: .dietaryFatMonounsaturated),
             HKObjectType.quantityType(forIdentifier: .dietaryFatPolyunsaturated),
-            HKObjectType.quantityType(forIdentifier: .dietaryBiotin),
             HKObjectType.quantityType(forIdentifier: .dietaryChloride),
             HKObjectType.quantityType(forIdentifier: .dietaryChromium),
             HKObjectType.quantityType(forIdentifier: .dietaryIodine),
@@ -106,7 +106,32 @@ class FoodInterfaceController: WKInterfaceController {
         
         
     }
-    
+    //MARK: Biotin
+    @IBAction func biotinAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let biotinQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryBiotin)
+        let unit = HKUnit.gramUnit(with: .micro)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: valueDouble)
+        var sample: HKQuantitySample? = nil
+        if let biotinQuantityType = biotinQuantityType {
+            sample = HKQuantitySample(type: biotinQuantityType
+                                      , quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    //MARK: Carbs
     @IBAction func addAction(_ value: NSString?) {
         WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -133,6 +158,7 @@ class FoodInterfaceController: WKInterfaceController {
  
     }
 }
+    //MARK: Protein
     @IBAction func proteinAction(_ value: NSString?) {
          WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -161,6 +187,7 @@ class FoodInterfaceController: WKInterfaceController {
         }
         
     }
+    //MARK: Fat
     @IBAction func fatAction(_ value: NSString?) {
          WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -186,6 +213,7 @@ class FoodInterfaceController: WKInterfaceController {
         }
  
     }
+    //MARK: Sugar
     @IBAction func sugarAction(_ value: NSString?) {
          WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -208,7 +236,50 @@ class FoodInterfaceController: WKInterfaceController {
             return
         }
     }
-    
+    //MARK: Chloride
+    @IBAction func chlorideAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let chlorideQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryChloride)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let chlorideQuantityType = chlorideQuantityType {
+            sample = HKQuantitySample(type: chlorideQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            return
+        }
+    }
+    //MARK: Chromium
+    @IBAction func chromiumAction(_ value: NSString?) {
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valeDouble = Double(valueString)!
+        let chromiumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryChromium)
+        let unit = HKUnit.gramUnit(with: .micro)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valeDouble))
+        var sample: HKQuantitySample? = nil
+        if let chromiumQuantityType = chromiumQuantityType {
+            sample = HKQuantitySample(type: chromiumQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) {(success, error) in
+            return
+        }
+    }
+    //MARK: Fiber
     @IBAction func fiberAction(_ value: NSString?) {
          WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -233,7 +304,104 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+    //MARK: Copper
+    @IBAction func copperAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let copperQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCopper)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: valueDouble)
+        var sample: HKQuantitySample? = nil
+        if let copperQuantityType = copperQuantityType {
+            sample = HKQuantitySample(type: copperQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+  //MARK: Cholesterol
+    @IBAction func cholesterolAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let choQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCholesterol)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: valueDouble)
+        var sample: HKQuantitySample? = nil
+        if let choQuantityType = choQuantityType {
+            sample = HKQuantitySample(type: choQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    //MARK: Vita C
+    @IBAction func vitaC(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let vitaCQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminC)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let vitaCQuantityType = vitaCQuantityType {
+            sample = HKQuantitySample(type: vitaCQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    //MARK: Vita D
+    @IBAction func vitaDAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let vitaDQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminD)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let vitaDQuantityType = vitaDQuantityType {
+            sample = HKQuantitySample(type: vitaDQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) {(succes, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
     
+    //MARK: Calcium
     @IBAction func calciumAction(_ value: NSString?) {
          WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -258,6 +426,81 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+    //MARK: Vita E
+    @IBAction func vitaEAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let vitaEQuantiyType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminE)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let vitaeQuantityType = vitaEQuantiyType {
+            sample = HKQuantitySample(type: vitaeQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) {(success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    //MARK: Vita K
+    @IBAction func vitaKAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let vitaKQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminK)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let vitaKQuantityType = vitaKQuantityType {
+            sample = HKQuantitySample(type: vitaKQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    
+    //MARK: Sat Fat
+    @IBAction func satFatAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let satFatQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFatSaturated)
+        let unit = HKUnit.gram()
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let satFatQuantityType = satFatQuantityType {
+            sample = HKQuantitySample(type: satFatQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (sucess, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    
+    //MARK: Iron
     @IBAction func ironAction(_ value: NSString?) {
         WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
@@ -284,6 +527,101 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+    @IBAction func folateAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let folateQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFolate)
+        let unit = HKUnit.gramUnit(with: .micro)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let folateQuantityType = folateQuantityType {
+            sample = HKQuantitySample(type: folateQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    @IBAction func niacinAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let niacinQuantiyType = HKQuantityType.quantityType(forIdentifier: .dietaryNiacin)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let niacinQuantityType = niacinQuantiyType {
+            sample = HKQuantitySample(type: niacinQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (success, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    @IBAction func potasAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let potasQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryPotassium)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let potasQuantityType = potasQuantityType {
+            sample = HKQuantitySample(type: potasQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (sucess, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    @IBAction func riboAction(_ value: NSString?) {
+        WKInterfaceDevice.current().play(.success)
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        let riboQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryRiboflavin)
+        let unit = HKUnit.gramUnit(with: .milli)
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+        var sample: HKQuantitySample? = nil
+        if let riboQuantityType = riboQuantityType {
+            sample = HKQuantitySample(type: riboQuantityType, quantity: quantityType, start: startDate, end: endDate)
+        }
+        healthStore.save(sample!) { (sucess, error) in
+            DispatchQueue.main.async {
+                return
+            }
+        }
+    }
+    @IBAction func thiaminAction(_ value: NSString?) {
+    }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()

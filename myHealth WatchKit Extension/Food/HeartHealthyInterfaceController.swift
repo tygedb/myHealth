@@ -491,6 +491,7 @@ class HeartHealthyInterfaceController: WKInterfaceController {
                    }
                }
     }
+    //MARK: BlueBerry
     @IBAction func blueberryAction() {
         WKInterfaceDevice.current().play(.success)
         //MARK: Quantity Type
@@ -595,6 +596,97 @@ class HeartHealthyInterfaceController: WKInterfaceController {
                 return
              }
         }
+    }
+    @IBAction func carrotsAction() {
+        
+        let carrotCal = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)
+        let carrotPro = HKQuantityType.quantityType(forIdentifier: .dietaryProtein)
+        let carrotCarb = HKQuantityType.quantityType(forIdentifier: .dietaryCarbohydrates)
+        let carrortSug = HKQuantityType.quantityType(forIdentifier: .dietarySugar)
+        let carrotFi = HKQuantityType.quantityType(forIdentifier: .dietaryFiber)
+        let carrotFat = HKQuantityType.quantityType(forIdentifier: .dietaryFatTotal)
+        
+        let unitCal = HKUnit(from: .calorie)
+        let unitPro = HKUnit.gram()
+        let unitCarb = HKUnit.gram()
+        let unitSug = HKUnit.gram()
+        let unitFi = HKUnit.gram()
+        let unitFat = HKUnit.gram()
+        
+        let carrotAmountCal = Int(41000)
+        let carrotAmountPro = Int(90)
+        let carrotAmountCarb = Int(9.600)
+        let carrotAmountSug = Int(4.700)
+        let carrotAmountFi = Int(2.800)
+        let carrotAmountFa = Int(20)
+        
+        var sample0: HKQuantitySample? = nil
+        var sample1: HKQuantitySample? = nil
+        var sample2: HKQuantitySample? = nil
+        var sample3: HKQuantitySample? = nil
+        var sample4: HKQuantitySample? = nil
+        var sample5: HKQuantitySample? = nil
+        
+        let quantity0 = HKQuantity(unit: unitCal, doubleValue: Double(carrotAmountCal))
+        let quantity1 = HKQuantity(unit: unitPro, doubleValue: Double(carrotAmountPro))
+        let quantity2 = HKQuantity(unit: unitCarb, doubleValue: Double(carrotAmountCarb))
+        let quantity3 = HKQuantity(unit: unitSug, doubleValue: Double(carrotAmountSug))
+        let quantity4 = HKQuantity(unit: unitFi, doubleValue: Double(carrotAmountFi))
+        let quantity5 = HKQuantity(unit: unitFat, doubleValue: Double(carrotAmountFa))
+        
+        let now = Date()
+        let startDate = now.addingTimeInterval(-60)
+        let endDate = now
+        
+        if let carrotCal = carrotCal {
+            sample0 = HKQuantitySample(type: carrotCal, quantity: quantity0, start: startDate, end: endDate)
+        }
+        if let carrotPro = carrotPro {
+            sample1 = HKQuantitySample(type: carrotPro, quantity: quantity1, start: startDate, end: endDate)
+        }
+        if let carrotCarb = carrotCarb {
+            sample2 = HKQuantitySample(type: carrotCarb, quantity: quantity2, start: startDate, end: endDate)
+        }
+        if let carrotSug = carrortSug {
+            sample3 = HKQuantitySample(type: carrotSug, quantity: quantity3, start: startDate, end: endDate)
+        }
+        if let carrotFi = carrotFi {
+            sample4 = HKQuantitySample(type: carrotFi, quantity: quantity4, start: startDate, end: endDate)
+        }
+        if let carrotFat = carrotFat {
+            sample5 = HKQuantitySample(type: carrotFat, quantity: quantity5, start: startDate, end: endDate)
+        }
+        
+        healthStore.save(sample0!) {(error, success) in
+        DispatchQueue.main.async {
+            return
+        }
+    }
+        healthStore.save(sample1!) {(success,error) in
+        DispatchQueue.main.async {
+            return
+            }
+        }
+        healthStore.save(sample2!) {(error, success) in
+              DispatchQueue.main.async {
+                  return
+              }
+          }
+        healthStore.save(sample3!) {(error, success) in
+              DispatchQueue.main.async {
+                  return
+              }
+          }
+        healthStore.save(sample4!) {(error, success) in
+              DispatchQueue.main.async {
+                  return
+              }
+          }
+        healthStore.save(sample5!) {(error, success) in
+              DispatchQueue.main.async {
+                  return
+              }
+          }
     }
     
 }

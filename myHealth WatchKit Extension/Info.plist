@@ -31,9 +31,15 @@
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>NSHealthShareUsageDescription</key>
-    <string>All of your health data tracked in myHealth will be shared with the Health app</string>
-    <key>NSHealthUpdateUsageDescription</key>
-    <string>All of your health data tracked in myHealth will be updated in the Health app</string>
+	<string>All of your health data tracked in myHealth will be shared with the Health app</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>All of your health data tracked in myHealth will be updated in the Health app</string>
+	<key>UIBackgroundModes</key>
+	<array/>
+	<key>WKBackgroundModes</key>
+	<array>
+		<string>alarm</string>
+	</array>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>

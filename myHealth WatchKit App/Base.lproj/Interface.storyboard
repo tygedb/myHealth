@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17132" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
     <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17031"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -40,32 +41,47 @@
                                         <segue destination="sCo-6y-t91" kind="modal" identifier="elliptical" id="flV-WF-CcH"/>
                                     </connections>
                                 </button>
+                                <separator alignment="center" verticalAlignment="bottom" id="ZC0-Yd-dHt"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="Mni-uR-mvv">
+                            <items>
+                                <button width="89" alignment="left" verticalAlignment="bottom" title="Toothbrush" id="0mb-4D-ZGe">
+                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="toothbrush" destination="AgC-eL-Hgc" id="XB4-uR-GgQ"/>
+                                    </connections>
+                                </button>
+                                <button width="89" alignment="left" verticalAlignment="bottom" title="Nutrition" id="PGU-Nj-wnO">
+                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="nutritionAction" destination="AgC-eL-Hgc" id="hyr-9z-E7w"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="1Ft-vm-ZU4">
+                            <items>
+                                <button width="89" alignment="left" verticalAlignment="bottom" title="Mental" id="xMv-fz-dtH">
+                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="MentalHealth" destination="AgC-eL-Hgc" id="dz0-5t-IVl"/>
+                                    </connections>
+                                </button>
+                                <button width="89" alignment="left" verticalAlignment="bottom" title="Symptoms" id="VY1-lb-FaT">
+                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="symptomAction" destination="AgC-eL-Hgc" id="yt9-Tx-YgO"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
-                    <menu key="menu" id="5Ol-UN-XQB">
-                        <items>
-                            <menuItem title="Nutrition" icon="info" id="cqS-4e-cUt">
-                                <connections>
-                                    <action selector="nutritionAction" destination="AgC-eL-Hgc" id="EAw-jz-ugH"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Mental Health" icon="accept" id="Mjr-MB-neX">
-                                <connections>
-                                    <action selector="MentalHealth" destination="AgC-eL-Hgc" id="hyN-Pv-jua"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Toothbrush" icon="info" id="z8z-Hg-xkX">
-                                <connections>
-                                    <action selector="toothbrush" destination="AgC-eL-Hgc" id="2C8-QQ-sCX"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Symptoms" id="PeI-hC-xB3"/>
-                        </items>
-                    </menu>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-254" y="677"/>
+            <point key="canvasLocation" x="587" y="861"/>
         </scene>
         <!--Nutrition-->
         <scene sceneID="H9L-kh-QUh">
@@ -99,7 +115,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-254" y="1004"/>
+            <point key="canvasLocation" x="-268" y="1530"/>
         </scene>
         <!--heartFood-->
         <scene sceneID="ZMe-dM-HNf">
@@ -134,21 +150,24 @@
                                 <action selector="blueberryAction" destination="abD-dq-yfM" id="h2H-9x-0Yw"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Carrots" id="FLj-fc-WSH"/>
+                        <button width="1" alignment="left" title="2 Baby Carrots" id="FLj-fc-WSH">
+                            <connections>
+                                <action selector="carrotsAction" destination="abD-dq-yfM" id="igU-3b-cNK"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-254" y="1327"/>
+            <point key="canvasLocation" x="-56" y="1520"/>
         </scene>
-        <!--manual-->
+        <!--manualOne-->
         <scene sceneID="98l-fC-nId">
             <objects>
-                <controller identifier="manual" id="9C2-T2-T6t" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="manualOne" id="9C2-T2-T6t" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <label width="136" alignment="left" alpha="0.0" text="Label" id="nb4-Z9-N67"/>
                         <textField width="1" alignment="center" placeholder="Biotin" id="pJN-De-OHb">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="dlf-5P-nWu"/>
+                                <action selector="biotinAction:" destination="9C2-T2-T6t" id="XDc-PE-HgS"/>
                             </connections>
                         </textField>
                         <group width="1" alignment="left" spacing="8" id="N0s-0U-GHs">
@@ -171,22 +190,37 @@
                         </group>
                         <textField width="1" alignment="center" placeholder="Copper" id="Y4K-pd-1ga">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="ceN-wK-JfG"/>
+                                <action selector="copperAction:" destination="9C2-T2-T6t" id="3bm-q2-X1W"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Cholesterol" id="JvR-4N-jKC">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="7gY-O9-vxW"/>
+                                <action selector="cholesterolAction:" destination="9C2-T2-T6t" id="ooe-6V-ghE"/>
                             </connections>
                         </textField>
+                    </items>
+                    <connections>
+                        <outlet property="proteinTextField" destination="VnY-JS-7w9" id="dkD-wi-2fW"/>
+                        <outlet property="sugarTextField" destination="8rW-Vp-csg" id="Nqm-Sz-l6h"/>
+                        <outlet property="totalfatTextField" destination="Psh-19-KDo" id="XC9-di-n6m"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-268" y="1829"/>
+        </scene>
+        <!--manualTwo-->
+        <scene sceneID="fzd-Fd-Y1b">
+            <objects>
+                <controller identifier="manualTwo" id="bEt-xM-aZR" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
                         <textField width="1" alignment="center" placeholder="Chloride" id="rT1-bH-zzL">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="qgS-bq-lPc"/>
+                                <action selector="chlorideAction:" destination="bEt-xM-aZR" id="lJO-hx-PhF"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Chromium" id="4gm-10-mx4">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="sil-3U-dAQ"/>
+                                <action selector="chromiumAction:" destination="bEt-xM-aZR" id="yFS-NU-fAf"/>
                             </connections>
                         </textField>
                         <group width="1" alignment="left" spacing="8" id="CQD-Wp-wVm">
@@ -216,114 +250,16 @@
                                 </textField>
                             </items>
                         </group>
-                        <group width="1" alignment="left" spacing="8" id="nvy-TN-x1O">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Fiber" id="w8w-St-Zg3">
-                                    <connections>
-                                        <action selector="fiberAction:" destination="9C2-T2-T6t" id="PHr-FT-hBo"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" spacing="8" id="JPf-eD-tVM">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Iron" id="d4Y-NR-D9a">
-                                    <connections>
-                                        <action selector="ironAction:" destination="9C2-T2-T6t" id="JrL-li-d4z"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <textField width="1" alignment="center" placeholder="Folate" id="cGG-86-mIz">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="bNx-dF-tde"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Niacin" id="TNH-aP-mBv">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="6ab-j5-seS"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Potassium" id="bUs-h6-xuW">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="cYZ-PH-ZlB"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Riboflavin" id="2RZ-em-hV8">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="kNq-KV-WpD"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Thiamin" id="pdW-m2-7yT">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="BXb-0D-fX6"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin A" id="sFR-eD-ca6">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="Wro-UA-eyJ"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin B6" id="SSA-rM-Q9f">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="VOJ-3t-cKP"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin B12" id="i5n-f5-WQ4">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="f9K-7O-KKA"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin C" id="gRg-rt-Eqh">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="6F9-qR-mcf"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin D" id="3Tt-bi-bgn">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="8bO-ka-jXX"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin E" id="UwI-Rq-v2S">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="uGA-SY-pYm"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin K" id="Wr8-nz-teK">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="aur-Vl-Oc2"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Saturated Fat" id="uPy-y5-AS3">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="x5B-H8-TGJ"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Mono Fat" id="3Nq-1a-QyB">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="Q8M-W7-JDF"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Poly Fat" id="db6-mg-q7c">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="q8A-aa-8NE"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Iodine" id="oCl-YX-vU2">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="D9G-g4-PTy"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Magnesium" id="Toh-dH-mRq">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="J50-51-t7t"/>
-                            </connections>
-                        </textField>
-                        <textField width="1" alignment="center" placeholder="Maganese" id="DvN-AX-pad">
-                            <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="mCD-Vn-rU2"/>
-                            </connections>
-                        </textField>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-65" y="1830"/>
+        </scene>
+        <!--manualSeven-->
+        <scene sceneID="ifc-Sr-5jc">
+            <objects>
+                <controller identifier="manualSeven" id="wx9-El-ymh" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
                         <textField width="1" alignment="center" placeholder="Molybdenum" id="Fhd-K1-oYL">
                             <connections>
                                 <action selector="ironAction:" destination="9C2-T2-T6t" id="Ol2-6t-1C8"/>
@@ -350,14 +286,157 @@
                             </connections>
                         </textField>
                     </items>
-                    <connections>
-                        <outlet property="proteinTextField" destination="VnY-JS-7w9" id="dkD-wi-2fW"/>
-                        <outlet property="sugarTextField" destination="8rW-Vp-csg" id="Nqm-Sz-l6h"/>
-                        <outlet property="totalfatTextField" destination="Psh-19-KDo" id="XC9-di-n6m"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-66" y="1491"/>
+            <point key="canvasLocation" x="344" y="1990"/>
+        </scene>
+        <!--manualThree-->
+        <scene sceneID="hjZ-KA-o7T">
+            <objects>
+                <controller identifier="manualThree" id="f3J-WX-aWx" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" spacing="8" id="nvy-TN-x1O">
+                            <items>
+                                <textField width="1" alignment="center" placeholder="Fiber" id="w8w-St-Zg3">
+                                    <connections>
+                                        <action selector="fiberAction:" destination="9C2-T2-T6t" id="PHr-FT-hBo"/>
+                                    </connections>
+                                </textField>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="JPf-eD-tVM">
+                            <items>
+                                <textField width="1" alignment="center" placeholder="Iron" id="d4Y-NR-D9a">
+                                    <connections>
+                                        <action selector="ironAction:" destination="9C2-T2-T6t" id="JrL-li-d4z"/>
+                                    </connections>
+                                </textField>
+                            </items>
+                        </group>
+                        <textField width="1" alignment="center" placeholder="Folate" id="cGG-86-mIz">
+                            <connections>
+                                <action selector="folateAction:" destination="f3J-WX-aWx" id="FF5-mF-Qjf"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Niacin" id="TNH-aP-mBv">
+                            <connections>
+                                <action selector="niacinAction:" destination="f3J-WX-aWx" id="FQy-u2-QMk"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Potassium" id="bUs-h6-xuW">
+                            <connections>
+                                <action selector="potasAction:" destination="f3J-WX-aWx" id="4S8-72-ykz"/>
+                            </connections>
+                        </textField>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-268" y="2106"/>
+        </scene>
+        <!--manualFour-->
+        <scene sceneID="gdn-pV-RKQ">
+            <objects>
+                <controller identifier="manualFour" id="KeZ-st-vk2" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
+                        <textField width="1" alignment="center" placeholder="Riboflavin" id="2RZ-em-hV8">
+                            <connections>
+                                <action selector="riboAction:" destination="KeZ-st-vk2" id="EQu-PG-3Ws"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Thiamin" id="pdW-m2-7yT">
+                            <connections>
+                                <action selector="thiaminAction:" destination="KeZ-st-vk2" id="FuH-cw-8dJ"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Vitamin A" id="sFR-eD-ca6">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="Wro-UA-eyJ"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Vitamin B6" id="SSA-rM-Q9f">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="VOJ-3t-cKP"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Vitamin B12" id="i5n-f5-WQ4">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="f9K-7O-KKA"/>
+                            </connections>
+                        </textField>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-65" y="2106"/>
+        </scene>
+        <!--manualFive-->
+        <scene sceneID="frB-Rh-Lfo">
+            <objects>
+                <controller identifier="manualFive" id="cUH-7r-iCA" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
+                        <textField width="1" alignment="center" placeholder="Vitamin C" id="gRg-rt-Eqh">
+                            <connections>
+                                <action selector="vitaC:" destination="cUH-7r-iCA" id="6l9-2a-1y4"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Vitamin D" id="3Tt-bi-bgn">
+                            <connections>
+                                <action selector="vitaDAction:" destination="cUH-7r-iCA" id="oOw-LV-bHW"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Vitamin E" id="UwI-Rq-v2S">
+                            <connections>
+                                <action selector="vitaEAction:" destination="cUH-7r-iCA" id="ZEY-1n-MSy"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Vitamin K" id="Wr8-nz-teK">
+                            <connections>
+                                <action selector="vitaKAction:" destination="cUH-7r-iCA" id="eUu-pt-EVK"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Saturated Fat" id="uPy-y5-AS3">
+                            <connections>
+                                <action selector="satFatAction:" destination="cUH-7r-iCA" id="avy-dZ-UJ5"/>
+                            </connections>
+                        </textField>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="143" y="1829"/>
+        </scene>
+        <!--manualSix-->
+        <scene sceneID="bbh-Y5-gfx">
+            <objects>
+                <controller identifier="manualSix" id="xbU-9l-Sd6" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
+                        <textField width="1" alignment="center" placeholder="Mono Fat" id="3Nq-1a-QyB">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="Q8M-W7-JDF"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Poly Fat" id="db6-mg-q7c">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="q8A-aa-8NE"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Iodine" id="oCl-YX-vU2">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="D9G-g4-PTy"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Magnesium" id="Toh-dH-mRq">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="J50-51-t7t"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Maganese" id="DvN-AX-pad">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="mCD-Vn-rU2"/>
+                            </connections>
+                        </textField>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="143" y="2106"/>
         </scene>
         <!--NutritionTwo-->
         <scene sceneID="bIJ-8c-bhi">
@@ -466,14 +545,15 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="121" y="971"/>
+            <point key="canvasLocation" x="1012" y="745"/>
         </scene>
         <!--Sleep-->
         <scene sceneID="nac-sq-UTM">
             <objects>
                 <controller identifier="Sleep" id="Z4T-TT-jPX" customClass="SleepInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <group width="140" height="130" alignment="center" layout="vertical" id="Thb-7z-A04">
+                        <label alignment="left" text="Sleep Tracking" id="sfm-Tx-n80"/>
+                        <group width="140" height="123" alignment="center" layout="vertical" id="Thb-7z-A04">
                             <items>
                                 <label width="136" height="62" alignment="center" verticalAlignment="center" text="00:00:00" textAlignment="center" id="135-3u-xF6">
                                     <fontDescription key="font" type="boldSystem" pointSize="22"/>
@@ -481,7 +561,7 @@
                                 </label>
                             </items>
                         </group>
-                        <group width="187" height="44" alignment="left" verticalAlignment="bottom" spacing="3" id="FUH-6i-Xyo">
+                        <group width="187" height="37" alignment="left" verticalAlignment="bottom" spacing="3" id="FUH-6i-Xyo">
                             <items>
                                 <button width="74" height="43" alignment="left" title="Start" id="mqb-4G-dgu">
                                     <fontDescription key="font" type="italicSystem" weight="bold" pointSize="21"/>
@@ -515,7 +595,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="741" y="670"/>
+            <point key="canvasLocation" x="787.91304347826087" y="1388.8392857142858"/>
         </scene>
         <!--Mood Interface Controller-->
         <scene sceneID="yrQ-EW-ljr">
@@ -538,7 +618,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="945" y="666"/>
+            <point key="canvasLocation" x="973" y="1389"/>
         </scene>
         <!--toothbrush-->
         <scene sceneID="PUl-6n-sbY">
@@ -572,7 +652,22 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="490" y="972"/>
+            <point key="canvasLocation" x="174" y="886"/>
+        </scene>
+        <!--Symptoms Interface Controller-->
+        <scene sceneID="xYl-Fc-aWO">
+            <objects>
+                <controller id="8c9-im-xob" customClass="SymptomsInterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="VtN-fo-6CA">
+                            <connections>
+                                <action selector="heartBurn" destination="8c9-im-xob" id="mKM-FI-bsp"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-12" y="886"/>
         </scene>
         <!--Mental-->
         <scene sceneID="Syr-gS-wFj">
@@ -634,7 +729,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="548" y="670"/>
+            <point key="canvasLocation" x="606" y="1393"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -708,7 +803,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="157" y="666"/>
+            <point key="canvasLocation" x="1012" y="1008"/>
         </scene>
         <!--WorkoutSession-->
         <scene sceneID="353-UZ-zn6">
@@ -744,7 +839,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-30" y="670"/>
+            <point key="canvasLocation" x="814" y="1008"/>
         </scene>
         <!--NutritionThree-->
         <scene sceneID="9cy-G9-dZb">
@@ -850,7 +945,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="307" y="972"/>
+            <point key="canvasLocation" x="1212" y="745"/>
         </scene>
         <!--EllipticalSession-->
         <scene sceneID="qvC-l6-5lO">
@@ -885,7 +980,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="345" y="666"/>
+            <point key="canvasLocation" x="814" y="745"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

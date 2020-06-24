@@ -23,6 +23,7 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     var session = WKExtendedRuntimeSession()
     var time = 15
     var expirationDate = Date()
+    var extendedRunTimeTimer: DispatchSourceTimer? = nil
    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -49,8 +50,8 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     
     @IBAction func start(sender: AnyObject) {
         session = WKExtendedRuntimeSession()
-        session.start()
         session.delegate = self
+        session.start(at: Date())
         WKInterfaceDevice.current().play(.start)
         let fireDate = Date(timeIntervalSinceNow: 20)
         alarmTime = Date()
@@ -62,6 +63,7 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (error) in
             if (error == nil) {
                 print("SUCCESS")
+                
             }
             
             
@@ -199,6 +201,13 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     
     func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
     print("Session started at\(Date())")
+        extendedRunTimeTimer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(), queue: DispatchQueue.main)
+        let workItem = DispatchWorkItem(qos: .default) {
+            print("Timer: \(self.start)")
+        }
+        extendedRunTimeTimer?.setEventHandler(handler: workItem)
+        extendedRunTimeTimer?.resume()
+        
         
     }
     

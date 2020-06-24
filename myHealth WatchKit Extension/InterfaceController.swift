@@ -14,7 +14,7 @@ import UserNotifications
 
 class InterfaceController: WKInterfaceController {
     
-
+  
     let healthStore = HKHealthStore()
     let workoutView = WorkoutSessionView()
  
@@ -37,6 +37,8 @@ class InterfaceController: WKInterfaceController {
             
           
         ]
+        
+        
         
         // Request authorization for those quantity types.
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
@@ -100,6 +102,15 @@ class InterfaceController: WKInterfaceController {
     @IBAction func toothbrush() {
         WKInterfaceDevice.current().play(.click)
         self.presentController(withName: "toothbrush", context: nil)
+    }
+    @IBAction func symptomAction() {
+        if #available(watchOS 7.0, *) {
+            WKInterfaceDevice.current().play(.click)
+            self.presentController(withName: "symptom", context: nil)
+        } else {
+            self.presentController(withName: "updateOS", context: nil)
+        }
+        
     }
     
     
