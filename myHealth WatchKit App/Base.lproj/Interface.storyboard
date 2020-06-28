@@ -115,7 +115,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-268" y="1530"/>
+            <point key="canvasLocation" x="-268" y="1508"/>
         </scene>
         <!--heartFood-->
         <scene sceneID="ZMe-dM-HNf">
@@ -158,7 +158,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-56" y="1520"/>
+            <point key="canvasLocation" x="-65" y="1519"/>
         </scene>
         <!--manualOne-->
         <scene sceneID="98l-fC-nId">
@@ -262,27 +262,27 @@
                     <items>
                         <textField width="1" alignment="center" placeholder="Molybdenum" id="Fhd-K1-oYL">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="Ol2-6t-1C8"/>
+                                <action selector="molybdenumAction:" destination="wx9-El-ymh" id="WIC-4J-VEa"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="PantothenicAcid" id="lWL-FN-S1h">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="dim-Mw-x66"/>
+                                <action selector="pantoacidAction:" destination="wx9-El-ymh" id="gU5-SX-SNM"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Phosphorus" id="TMv-eg-V2M">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="TZr-gZ-QdG"/>
+                                <action selector="phosphAction:" destination="wx9-El-ymh" id="0b2-j9-TV2"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Selenium" id="cM9-v0-usG">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="BSL-LH-uYp"/>
+                                <action selector="seleniumAction:" destination="wx9-El-ymh" id="zwl-2R-OfT"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Zinc" id="0RP-BL-JOM">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="dbr-M0-tiF"/>
+                                <action selector="zincAction:" destination="wx9-El-ymh" id="YBw-PR-ajv"/>
                             </connections>
                         </textField>
                     </items>
@@ -355,12 +355,12 @@
                         </textField>
                         <textField width="1" alignment="center" placeholder="Vitamin B6" id="SSA-rM-Q9f">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="VOJ-3t-cKP"/>
+                                <action selector="vitaB6Action:" destination="KeZ-st-vk2" id="8qX-lv-WLg"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Vitamin B12" id="i5n-f5-WQ4">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="f9K-7O-KKA"/>
+                                <action selector="vitaB12Action:" destination="KeZ-st-vk2" id="gQw-DC-qve"/>
                             </connections>
                         </textField>
                     </items>
@@ -410,27 +410,27 @@
                     <items>
                         <textField width="1" alignment="center" placeholder="Mono Fat" id="3Nq-1a-QyB">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="Q8M-W7-JDF"/>
+                                <action selector="monoFatAction:" destination="xbU-9l-Sd6" id="nlJ-Gk-SX0"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Poly Fat" id="db6-mg-q7c">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="q8A-aa-8NE"/>
+                                <action selector="polyFat:" destination="xbU-9l-Sd6" id="8hr-PX-Hqq"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Iodine" id="oCl-YX-vU2">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="D9G-g4-PTy"/>
+                                <action selector="iodineAction:" destination="xbU-9l-Sd6" id="yDo-eB-NeP"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Magnesium" id="Toh-dH-mRq">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="J50-51-t7t"/>
+                                <action selector="magnesiumAction:" destination="xbU-9l-Sd6" id="2hK-s0-WnU"/>
                             </connections>
                         </textField>
                         <textField width="1" alignment="center" placeholder="Maganese" id="DvN-AX-pad">
                             <connections>
-                                <action selector="ironAction:" destination="9C2-T2-T6t" id="mCD-Vn-rU2"/>
+                                <action selector="maganeseAction:" destination="xbU-9l-Sd6" id="ieD-iO-ona"/>
                             </connections>
                         </textField>
                     </items>
@@ -729,7 +729,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="606" y="1393"/>
+            <point key="canvasLocation" x="605" y="1389"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

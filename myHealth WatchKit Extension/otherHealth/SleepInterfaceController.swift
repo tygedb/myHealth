@@ -57,7 +57,7 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         alarmTime = Date()
         if (!timer.isValid) {
             let aSelector : Selector = #selector(SleepInterfaceController.updateTimer)
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = Date.timeIntervalSinceReferenceDate
         }
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (error) in
@@ -70,17 +70,6 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         }
         
     }
-//    @objc func action() {
-//        if time < 1 {
-//            WKInterfaceDevice.current().play(.stop)
-//            timer.invalidate()
-//            time = 15
-//            session.invalidate()
-//        } else {
-//            time -= 1
-//        }
-//    }
-//
     @IBAction func stop(sender: AnyObject){
         session.invalidate()
         WKInterfaceDevice.current().play(.stop)
@@ -107,14 +96,14 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         let seconds = UInt8(elapsedTime)
         elapsedTime -= TimeInterval(seconds)
         
-        let fraction = UInt8(elapsedTime * 100)
+//        let fraction = UInt8(elapsedTime * 100)
         
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
-        let strFractions = String(format: "%02d", fraction)
+//        let strFractions = String(format: "%02d", fraction)
         
         
-        displayTimeLabel.setText("\(strMinutes):\(strSeconds):\(strFractions)")
+        displayTimeLabel.setText("\(strMinutes):\(strSeconds)")
     }
 
     func saveSleepAnalysis() {
@@ -203,7 +192,7 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     print("Session started at\(Date())")
         extendedRunTimeTimer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(), queue: DispatchQueue.main)
         let workItem = DispatchWorkItem(qos: .default) {
-            print("Timer: \(self.start)")
+            print("Timer: \(String(describing: self.start))")
         }
         extendedRunTimeTimer?.setEventHandler(handler: workItem)
         extendedRunTimeTimer?.resume()
