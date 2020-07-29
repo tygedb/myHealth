@@ -14,6 +14,8 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     
     @IBOutlet weak var displayTimeLabel: WKInterfaceLabel!
     @IBOutlet weak var batteryLife: WKInterfaceLabel!
+    @IBOutlet weak var stopButton: WKInterfaceButton!
+    @IBOutlet weak var playButton: WKInterfaceButton!
     
     let healthStore = HKHealthStore()
     var startTime = TimeInterval()
@@ -29,6 +31,7 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
         super.awake(withContext: context)
         session.delegate = self
         session = WKExtendedRuntimeSession()
+        stopButton.setAlpha(0)
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
 //        batteryLife.setText("\(WKInterfaceDevice.current().batteryLevel.binade)%")
 //        batteryLife.setTextColor(.red)
@@ -50,6 +53,8 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     
     @IBAction func start(sender: AnyObject) {
         session = WKExtendedRuntimeSession()
+        playButton.setAlpha(0)
+        stopButton.setAlpha(1)
         session.delegate = self
         session.start(at: Date())
         WKInterfaceDevice.current().play(.start)
@@ -72,6 +77,8 @@ class SleepInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionD
     }
     @IBAction func stop(sender: AnyObject){
         session.invalidate()
+        playButton.setAlpha(1)
+        stopButton.setAlpha(0)
         WKInterfaceDevice.current().play(.stop)
                endTime = Date()
                self.saveSleepAnalysis()

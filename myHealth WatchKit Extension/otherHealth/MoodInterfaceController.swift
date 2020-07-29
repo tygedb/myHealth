@@ -16,11 +16,19 @@ class MoodInterfaceController: WKInterfaceController {
     @IBOutlet weak var moodPicker: WKInterfacePicker!
     
     var image: WKImage?
+    var items: [String]! = nil
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        items = (1...5).map { "smileyFace\($0).jpg"}
         
-
+        let pickerItems: [WKPickerItem] = items.map {_ in
+            let pickerItem = WKPickerItem()
+            pickerItem.contentImage = WKImage(imageName: "smileyFace.jpg")
+            return pickerItem
+        }
+        moodPicker.setItems(pickerItems)
+        moodPicker.focus()
         
       
         // Configure interface objects here.

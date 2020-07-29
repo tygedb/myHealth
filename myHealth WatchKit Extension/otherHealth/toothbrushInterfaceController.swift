@@ -12,9 +12,7 @@ import HealthKit
 
 
 class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionDelegate {
-   
-    
-    
+ 
     var timer = Timer()
     var timeLeft = 120
     var startTime = TimeInterval()
@@ -27,11 +25,13 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
     var extendedRunTimeTimer: DispatchSourceTimer? = nil
     var sample: HKQuantitySample? = nil
     @IBOutlet weak var timeLabel: WKInterfaceLabel!
-    
+    @IBOutlet weak var startButton: WKInterfaceButton!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         session.delegate = self
         session = WKExtendedRuntimeSession()
+        startButton.setTitle("Start")
+        
         func activateHealthKit() {
         let typesToRead = Set([
         
@@ -99,15 +99,16 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
     if timeLeft <= 0 {
         WKInterfaceDevice.current().play(.stop)
         timer.invalidate()
-        if let toothBrushQuantityType = toothbrushQuantityType {
-            sample = HKCategorySample(type: toothBrushQuantityType, value: timeLeftAmount, start: startDate, end: endDate)
-            
-        }
-        healthStore.save(sample!) { (success, error) in
-            DispatchQueue.main.async {
-                return
-            }
-        }
+        timeLabel.setText("\(timeString(time: TimeInterval(timeLeft)))")
+//        if let toothBrushQuantityType = toothbrushQuantityType {
+//            sample = HKCategorySample(type: toothBrushQuantityType, value: timeLeftAmount, start: startDate, end: endDate)
+//
+//        }
+//        healthStore.save(sample!) { (success, error) in
+//            DispatchQueue.main.async {
+//                return
+//            }
+//        }
     }
   
 }

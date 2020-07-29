@@ -55,10 +55,8 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       notificationPayloadFile = "myHealth WatchKit Extension/Other/PushNotificationPayload.apns">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/myHealth">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A5AC2FA2477038000F29F36"
@@ -66,7 +64,7 @@
             BlueprintName = "myHealth WatchKit App"
             ReferencedContainer = "container:myHealth.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
       <LocationScenarioReference
          identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
          referenceType = "1">
@@ -78,10 +76,8 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/myHealth">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A5AC2FA2477038000F29F36"
@@ -89,16 +85,7 @@
             BlueprintName = "myHealth WatchKit App"
             ReferencedContainer = "container:myHealth.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A5AC2FA2477038000F29F36"
-            BuildableName = "myHealth.app"
-            BlueprintName = "myHealth WatchKit App"
-            ReferencedContainer = "container:myHealth.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

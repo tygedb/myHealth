@@ -3,7 +3,7 @@
     <device id="watch44"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17031"/>
     </dependencies>
     <scenes>
@@ -109,7 +109,7 @@
                         <button width="1" alignment="left" title="Manual" id="Nuw-kx-Vb0">
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="17"/>
                             <connections>
-                                <segue destination="9C2-T2-T6t" kind="push" identifier="manual" id="40z-v2-d6G"/>
+                                <segue destination="9C2-T2-T6t" kind="modal" identifier="manual" id="40z-v2-d6G"/>
                             </connections>
                         </button>
                     </items>
@@ -206,12 +206,12 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-268" y="1829"/>
+            <point key="canvasLocation" x="-268" y="1845"/>
         </scene>
         <!--manualTwo-->
         <scene sceneID="fzd-Fd-Y1b">
             <objects>
-                <controller identifier="manualTwo" id="bEt-xM-aZR" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="manualTwo" contentMode="center" id="bEt-xM-aZR" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <textField width="1" alignment="center" placeholder="Chloride" id="rT1-bH-zzL">
                             <connections>
@@ -253,7 +253,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-65" y="1830"/>
+            <point key="canvasLocation" x="-65" y="1845"/>
         </scene>
         <!--manualSeven-->
         <scene sceneID="ifc-Sr-5jc">
@@ -331,7 +331,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-268" y="2106"/>
+            <point key="canvasLocation" x="-268" y="2121"/>
         </scene>
         <!--manualFour-->
         <scene sceneID="gdn-pV-RKQ">
@@ -366,7 +366,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-65" y="2106"/>
+            <point key="canvasLocation" x="-65" y="2121"/>
         </scene>
         <!--manualFive-->
         <scene sceneID="frB-Rh-Lfo">
@@ -401,7 +401,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="143" y="1829"/>
+            <point key="canvasLocation" x="143" y="1845"/>
         </scene>
         <!--manualSix-->
         <scene sceneID="bbh-Y5-gfx">
@@ -436,12 +436,12 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="143" y="2106"/>
+            <point key="canvasLocation" x="143" y="2121"/>
         </scene>
         <!--NutritionTwo-->
         <scene sceneID="bIJ-8c-bhi">
             <objects>
-                <controller identifier="NutritionTwo" id="lxi-P7-b3f" customClass="WaterInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="NutritionTwo" fullBounds="YES" id="lxi-P7-b3f" customClass="WaterInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <label width="113" height="30" alignment="left" text="Water Tracker" textAlignment="left" id="M0G-sy-x6Y">
                             <fontDescription key="font" type="boldSystem" pointSize="20"/>
@@ -550,61 +550,44 @@
         <!--Sleep-->
         <scene sceneID="nac-sq-UTM">
             <objects>
-                <controller identifier="Sleep" id="Z4T-TT-jPX" customClass="SleepInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Sleep" spacing="0.0" fullBounds="YES" fullScreen="YES" id="Z4T-TT-jPX" customClass="SleepInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Sleep Tracking" id="sfm-Tx-n80"/>
-                        <group width="140" height="123" alignment="center" layout="vertical" id="Thb-7z-A04">
+                        <label width="115" height="46" alignment="left" text="Sleep Tracking" id="sfm-Tx-n80"/>
+                        <group width="136" height="116" alignment="center" layout="overlap" id="RXZ-YR-gFp">
                             <items>
-                                <label width="136" height="62" alignment="center" verticalAlignment="center" text="00:00:00" textAlignment="center" id="135-3u-xF6">
-                                    <fontDescription key="font" type="boldSystem" pointSize="22"/>
-                                    <variation key="device=watch38mm" alignment="center" verticalAlignment="center"/>
-                                </label>
-                            </items>
-                        </group>
-                        <group width="187" height="37" alignment="left" verticalAlignment="bottom" spacing="3" id="FUH-6i-Xyo">
-                            <items>
-                                <button width="74" height="43" alignment="left" title="Start" id="mqb-4G-dgu">
-                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="21"/>
-                                    <variation key="device=watch38mm" width="64"/>
-                                    <variation key="device=watch40mm" verticalAlignment="top" width="77"/>
-                                    <variation key="device=watch42mm" width="75"/>
-                                    <variation key="device=watch44mm" alignment="center" verticalAlignment="top" width="80"/>
+                                <button width="101" height="106" alignment="center" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="0YD-FQ-N13">
+                                    <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
-                                        <action selector="startWithSender:" destination="Z4T-TT-jPX" id="wfy-77-iMf"/>
+                                        <action selector="startWithSender:" destination="Z4T-TT-jPX" id="Xnv-kD-vBS"/>
                                     </connections>
                                 </button>
-                                <button width="70" height="43" alignment="center" title="Stop" id="emp-gY-ni9">
-                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="21"/>
-                                    <variation key="device=watch38mm" width="64"/>
-                                    <variation key="device=watch40mm" verticalAlignment="center" width="77"/>
-                                    <variation key="device=watch42mm" width="77"/>
-                                    <variation key="device=watch44mm" width="80"/>
+                                <button width="101" height="106" alignment="center" verticalAlignment="center" backgroundImage="stop.circle.fill" catalog="system" id="TDy-vy-IqY">
+                                    <color key="backgroundColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
-                                        <action selector="stopWithSender:" destination="Z4T-TT-jPX" id="Tcv-al-8VO"/>
+                                        <action selector="stopWithSender:" destination="Z4T-TT-jPX" id="aFe-q0-OIx"/>
                                     </connections>
                                 </button>
                             </items>
-                            <variation key="device=watch38mm" alignment="center" spacing="4" verticalAlignment="bottom"/>
-                            <variation key="device=watch40mm" spacing="5"/>
-                            <variation key="device=watch42mm" alignment="center" verticalAlignment="bottom"/>
-                            <variation key="device=watch44mm" alignment="center" spacing="5" verticalAlignment="bottom" width="187"/>
                         </group>
+                        <label alignment="left" hidden="YES" text="Label" id="U9b-jE-FWR"/>
                     </items>
                     <connections>
-                        <outlet property="displayTimeLabel" destination="135-3u-xF6" id="tXo-t6-e5L"/>
+                        <outlet property="displayTimeLabel" destination="U9b-jE-FWR" id="4SG-Zk-GkR"/>
+                        <outlet property="playButton" destination="0YD-FQ-N13" id="odL-in-YIa"/>
+                        <outlet property="stopButton" destination="TDy-vy-IqY" id="7oR-7N-DdS"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="787.91304347826087" y="1388.8392857142858"/>
+            <point key="canvasLocation" x="785.695652173913" y="1388.8392857142858"/>
         </scene>
-        <!--Mood Interface Controller-->
+        <!--Mood-->
         <scene sceneID="yrQ-EW-ljr">
             <objects>
-                <controller id="7Iq-4R-3Ww" customClass="MoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Mood" fullBounds="YES" id="7Iq-4R-3Ww" customClass="MoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <group width="1" height="143" alignment="left" id="eXb-gM-YMy">
                             <items>
-                                <picker height="100" alignment="left" style="stack" id="WXq-8U-ViT">
+                                <picker height="140" alignment="center" style="stack" id="WXq-8U-ViT">
                                     <connections>
                                         <action selector="moodPickerAction:" destination="7Iq-4R-3Ww" id="JI0-uA-24y"/>
                                     </connections>
@@ -618,16 +601,17 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="973" y="1389"/>
+            <point key="canvasLocation" x="972.695652173913" y="1388.8392857142858"/>
         </scene>
         <!--toothbrush-->
         <scene sceneID="PUl-6n-sbY">
             <objects>
-                <controller identifier="toothbrush" id="g5P-8b-9DD" customClass="toothbrushInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="toothbrush" fullBounds="YES" id="g5P-8b-9DD" customClass="toothbrushInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <group width="1" height="129" alignment="center" id="FJA-le-2CP">
                             <items>
                                 <label width="136" height="127" alignment="center" verticalAlignment="center" text="00:00" textAlignment="center" id="yY4-dw-9Lz">
+                                    <color key="textColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="22"/>
                                 </label>
                             </items>
@@ -636,10 +620,9 @@
                         </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="WGW-8G-dcS">
                             <items>
-                                <button width="1" alignment="center" title="Start" id="a33-5N-5D4">
+                                <button width="136" alignment="center" title="Start" id="a33-5N-5D4">
+                                    <color key="titleColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="italicSystem" weight="bold" pointSize="25"/>
-                                    <variation key="device=watch40mm" width="0.90000000000000002"/>
-                                    <variation key="device=watch44mm" width="0.90000000000000002"/>
                                     <connections>
                                         <action selector="start" destination="g5P-8b-9DD" id="dgP-i5-ICV"/>
                                     </connections>
@@ -648,49 +631,47 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="startButton" destination="a33-5N-5D4" id="LcN-3V-HUc"/>
                         <outlet property="timeLabel" destination="yY4-dw-9Lz" id="7Xt-9y-fRi"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="174" y="886"/>
+            <point key="canvasLocation" x="173.69565217391303" y="885.66964285714289"/>
         </scene>
-        <!--Symptoms Interface Controller-->
+        <!--symptoms-->
         <scene sceneID="xYl-Fc-aWO">
             <objects>
-                <controller id="8c9-im-xob" customClass="SymptomsInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="symptoms" id="8c9-im-xob" customClass="SymptomsInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Button" id="VtN-fo-6CA">
-                            <connections>
-                                <action selector="heartBurn" destination="8c9-im-xob" id="mKM-FI-bsp"/>
-                            </connections>
-                        </button>
+                        <label width="136" height="162" alignment="center" text="Coming soon..." textAlignment="center" id="bEe-eN-EvI"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-12" y="886"/>
+            <point key="canvasLocation" x="-12.565217391304348" y="885.66964285714289"/>
         </scene>
         <!--Mental-->
         <scene sceneID="Syr-gS-wFj">
             <objects>
-                <controller identifier="Mental" id="uGw-4j-XUb" customClass="mentalInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Mental" fullBounds="YES" id="uGw-4j-XUb" customClass="mentalInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <label width="136" alignment="left" text="0" id="hSP-15-XCq">
                             <variation key="device=watch38mm" alignment="left" verticalAlignment="top"/>
                         </label>
                         <group width="136" height="103" alignment="center" layout="vertical" id="Vjf-nE-SMD">
                             <items>
-                                <label width="136" height="87" alignment="center" text="Label" textAlignment="center" id="XgM-JQ-NP2">
+                                <label width="136" height="87" alignment="center" text="00:00" textAlignment="center" id="XgM-JQ-NP2">
+                                    <color key="textColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="29"/>
                                     <variation key="device=watch38mm" alignment="center" verticalAlignment="top"/>
-                                    <variation key="device=watch44mm" height="87" width="136"/>
+                                    <variation key="device=watch44mm" height="90" width="136"/>
                                 </label>
                             </items>
                             <variation key="device=watch38mm" alignment="center"/>
                         </group>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="ZXz-wW-xxW">
+                        <group width="1" height="64" alignment="center" verticalAlignment="bottom" id="ZXz-wW-xxW">
                             <items>
                                 <button width="89" height="45" alignment="left" title="Start" id="af5-hM-hpk">
-                                    <color key="titleColor" red="0.3689632994" green="0.54806181340000004" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="italicSystem" weight="bold" pointSize="28"/>
                                     <variation key="device=watch38mm" width="65">
                                         <fontDescription key="font" type="italicSystem" weight="bold" pointSize="22"/>
@@ -705,7 +686,7 @@
                                     </connections>
                                 </button>
                                 <button width="89" height="45" alignment="left" title="Stop" id="Umn-bf-q0e">
-                                    <color key="titleColor" red="0.3689632994" green="0.54806181340000004" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="italicSystem" weight="bold" pointSize="28"/>
                                     <variation key="device=watch38mm" width="65">
                                         <fontDescription key="font" type="italicSystem" weight="bold" pointSize="23"/>
@@ -721,6 +702,7 @@
                                 </button>
                             </items>
                             <variation key="device=watch38mm" alignment="center" verticalAlignment="bottom"/>
+                            <variation key="device=watch44mm" alignment="center" verticalAlignment="bottom"/>
                         </group>
                     </items>
                     <connections>
@@ -729,7 +711,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="605" y="1389"/>
+            <point key="canvasLocation" x="604.60869565217388" y="1389.5982142857142"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -773,11 +755,12 @@
         <!--YogaSession-->
         <scene sceneID="8Da-oV-aql">
             <objects>
-                <controller identifier="YogaSession" id="2Y8-5A-ruT" customClass="yogaSessionView" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="YogaSession" fullScreen="YES" id="2Y8-5A-ruT" customClass="yogaSessionView" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <group width="1" height="113" alignment="left" verticalAlignment="center" layout="vertical" spacing="5" id="pez-C9-6O2">
                             <items>
                                 <timer width="136" height="35" alignment="left" id="fuu-LW-KPJ">
+                                    <color key="textColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="28"/>
                                 </timer>
                                 <label width="136" height="25" alignment="left" text="0.0 BPM" id="9Rm-eB-yzN">
@@ -794,8 +777,31 @@
                             <variation key="device=watch42mm" alignment="left" verticalAlignment="center"/>
                             <variation key="device=watch44mm" alignment="left" verticalAlignment="center"/>
                         </group>
+                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" id="AQ8-p4-bV1">
+                            <items>
+                                <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="stop.circle.fill" catalog="system" id="nok-n0-6p0">
+                                    <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="5"/>
+                                    <connections>
+                                        <action selector="endWorkoutAction" destination="2Y8-5A-ruT" id="loq-cu-1jG"/>
+                                    </connections>
+                                </button>
+                                <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="pause.circle.fill" catalog="system" id="pDw-7i-YAk">
+                                    <color key="backgroundColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pauseWorkoutAction" destination="2Y8-5A-ruT" id="XhW-Ya-r6k"/>
+                                    </connections>
+                                </button>
+                                <button width="49" height="43" alignment="center" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="Uc9-ia-6JT">
+                                    <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="resumeWorkoutAction" destination="2Y8-5A-ruT" id="HQ1-yV-ZEf"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
-                    <menu key="menu" id="MTL-mp-mky"/>
                     <connections>
                         <outlet property="calorieCountLabel" destination="QNS-yG-WNr" id="fOi-pY-9FV"/>
                         <outlet property="heartRateLabel" destination="9Rm-eB-yzN" id="Bqe-jU-i4q"/>
@@ -803,16 +809,17 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1012" y="1008"/>
+            <point key="canvasLocation" x="1011.8695652173913" y="1007.8571428571429"/>
         </scene>
         <!--WorkoutSession-->
         <scene sceneID="353-UZ-zn6">
             <objects>
-                <controller identifier="WorkoutSession" id="wgI-Af-LaD" customClass="WorkoutSessionView" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="WorkoutSession" fullScreen="YES" id="wgI-Af-LaD" customClass="WorkoutSessionView" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <group width="1" height="170" alignment="left" layout="vertical" spacing="0.0" id="KEU-S1-Jo8">
+                        <group alignment="left" verticalAlignment="center" layout="vertical" id="KEU-S1-Jo8">
                             <items>
-                                <timer alignment="left" id="FLC-vr-buZ">
+                                <timer alignment="left" enabled="YES" id="FLC-vr-buZ">
+                                    <color key="textColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="28"/>
                                 </timer>
                                 <label alignment="left" text="0.0 BPM" id="mFF-Ax-iLU">
@@ -827,14 +834,40 @@
                                     <fontDescription key="font" type="system" weight="medium" pointSize="28"/>
                                 </label>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="28" bottom="0.0"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" id="w7J-72-Nbd">
+                            <items>
+                                <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="stop.circle.fill" catalog="system" id="49g-hA-cql">
+                                    <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="5"/>
+                                    <connections>
+                                        <action selector="endWorkoutAction" destination="wgI-Af-LaD" id="XSR-Ef-DrG"/>
+                                    </connections>
+                                </button>
+                                <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="pause.circle.fill" catalog="system" id="wQF-Xo-ZIp">
+                                    <color key="backgroundColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pauseWorkoutAction" destination="wgI-Af-LaD" id="Rgy-lh-2B6"/>
+                                    </connections>
+                                </button>
+                                <button width="49" height="43" alignment="center" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="2n4-QV-EwW">
+                                    <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="resumeWorkoutAction" destination="wgI-Af-LaD" id="gZq-nP-FxQ"/>
+                                    </connections>
+                                </button>
+                            </items>
                         </group>
                     </items>
-                    <menu key="menu" id="M6I-Va-tBh"/>
                     <connections>
                         <outlet property="caloriescountLabel" destination="9sT-6d-Cg8" id="ToQ-fu-vJG"/>
                         <outlet property="distanceLabel" destination="nk6-Ll-O6k" id="iOf-pS-ANm"/>
+                        <outlet property="endButton" destination="49g-hA-cql" id="scr-cl-paO"/>
                         <outlet property="heartRateLabel" destination="mFF-Ax-iLU" id="cmd-9N-VI4"/>
+                        <outlet property="pauseButton" destination="wQF-Xo-ZIp" id="UTV-Vj-rNa"/>
+                        <outlet property="resumeButton" destination="2n4-QV-EwW" id="yGF-ti-Ckr"/>
                         <outlet property="timer" destination="FLC-vr-buZ" id="JKc-nV-Fc5"/>
                     </connections>
                 </controller>
@@ -844,7 +877,7 @@
         <!--NutritionThree-->
         <scene sceneID="9cy-G9-dZb">
             <objects>
-                <controller identifier="NutritionThree" id="4f0-nu-M6v" customClass="CaffeineInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="NutritionThree" fullBounds="YES" id="4f0-nu-M6v" customClass="CaffeineInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <label width="113" height="30" alignment="left" text="Caffeine Tracker" textAlignment="left" id="QGN-IK-Tkl">
                             <fontDescription key="font" type="boldSystem" pointSize="17"/>
@@ -950,11 +983,12 @@
         <!--EllipticalSession-->
         <scene sceneID="qvC-l6-5lO">
             <objects>
-                <controller identifier="EllipticalSession" id="sCo-6y-t91" customClass="ellipticalSessionView" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="EllipticalSession" contentMode="center" fullScreen="YES" id="sCo-6y-t91" customClass="ellipticalSessionView" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <group width="1" height="113" alignment="left" verticalAlignment="center" layout="vertical" spacing="5" id="XR3-Vw-0dK">
+                        <group width="131" height="113" alignment="left" verticalAlignment="center" layout="vertical" spacing="5" id="XR3-Vw-0dK">
                             <items>
                                 <timer width="136" height="35" alignment="left" id="fIt-hM-zDO">
+                                    <color key="textColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="28"/>
                                 </timer>
                                 <label width="136" height="25" alignment="left" text="0.0 BPM" id="G3G-yB-OTo">
@@ -971,8 +1005,31 @@
                             <variation key="device=watch42mm" alignment="left" verticalAlignment="center"/>
                             <variation key="device=watch44mm" alignment="left" verticalAlignment="center"/>
                         </group>
+                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" id="Fda-wk-6S7">
+                            <items>
+                                <button width="49" height="43" alignment="left" verticalAlignment="bottom" backgroundImage="stop.circle.fill" catalog="system" id="fS2-vq-ovn">
+                                    <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="5"/>
+                                    <connections>
+                                        <action selector="endWorkoutAction" destination="wgI-Af-LaD" id="C1V-L4-9fi"/>
+                                    </connections>
+                                </button>
+                                <button width="49" height="43" alignment="left" verticalAlignment="bottom" backgroundImage="pause.circle.fill" catalog="system" id="l2f-sF-WV9">
+                                    <color key="backgroundColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pauseWorkoutAction" destination="wgI-Af-LaD" id="qHq-JM-LKU"/>
+                                    </connections>
+                                </button>
+                                <button width="49" height="43" alignment="right" verticalAlignment="bottom" backgroundImage="play.circle.fill" catalog="system" id="NVJ-Ab-zdI">
+                                    <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="resumeWorkoutAction" destination="wgI-Af-LaD" id="3en-Vr-oxq"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
-                    <menu key="menu" id="3iV-HU-vTF"/>
                     <connections>
                         <outlet property="calorieCountLabel" destination="Yxg-al-whI" id="pxx-3i-MPE"/>
                         <outlet property="heartRateLabel" destination="G3G-yB-OTo" id="6Dm-tS-HdM"/>
@@ -984,6 +1041,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="i11-MF-LbB"/>
+        <segue reference="pAU-42-6hg"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="pause.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 import HealthKit
 
-class mentalInterfaceController: WKInterfaceController {
+class mentalInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionDelegate {
     let healthStore = HKHealthStore()
     var timer = Timer()
     var intCounter: Int = 0
@@ -22,12 +22,13 @@ class mentalInterfaceController: WKInterfaceController {
     @IBOutlet weak var meditationMinutesLabel: WKInterfaceLabel!
     let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession)
     var minutes: Int = 0
+    var extendedRunTimeTimer: DispatchSourceTimer? = nil
+    var session = WKExtendedRuntimeSession()
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         self.activateHealthKit()
-        timeLabel.setText("00:00")
-        meditationMinutesLabel.setText("\(minutes)")
+        
         // Configure interface objects here.
     }
    
@@ -71,6 +72,27 @@ class mentalInterfaceController: WKInterfaceController {
         }
         
     }
+    func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
+        print("Session stopped at \(Date())")
+        
+    }
+    
+    func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+    print("Session started at\(Date())")
+        extendedRunTimeTimer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(), queue: DispatchQueue.main)
+        let workItem = DispatchWorkItem(qos: .default) {
+            print("Timer: \(String(describing: self.startBreathe()))")
+        }
+        extendedRunTimeTimer?.setEventHandler(handler: workItem)
+        extendedRunTimeTimer?.resume()
+        
+        
+    }
+    
+    func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+        
+    }
+
 //    MARK: Receive Mindful Minutes
     func retreiveMindfulMinutes() {
         
@@ -115,7 +137,9 @@ class mentalInterfaceController: WKInterfaceController {
     
    
     @IBAction func startBreathe() {
-      
+        session = WKExtendedRuntimeSession()
+        session.delegate = self
+        session.start(at: Date())
         WKInterfaceDevice.current().play(.start)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
        
@@ -125,10 +149,20 @@ class mentalInterfaceController: WKInterfaceController {
         WKInterfaceDevice.current().play(.stop)
         let startTime = Date()
         let endTime = startTime.addingTimeInterval(1.0 * 60.0)
-        self.saveMindfullAnalysis(startTime: startTime, endTime: endTime)
-        timer.invalidate()
-        timeLabel.setText("00:00")
-
+//        timeLabel.setText("00:00")
+        
+        if timeLeft == 60 {
+            self.saveMindfullAnalysis(startTime: startTime, endTime: endTime)
+            timer.invalidate()
+            timeLabel.setText("00:00")
+            meditationMinutesLabel.setText("\(minutes)")
+            
+        }
+        
+        if timeLeft <= 60 {
+            timer.invalidate()
+            timeLabel.setText("00:00")
+        }
         //Update timer
        
     }
@@ -136,17 +170,6 @@ class mentalInterfaceController: WKInterfaceController {
     @objc func onTimerFires() {
         intCounter += 1
         timeLabel.setText(String(format:"%02d:%02d", (intCounter % 3600) / 60, (intCounter % 3600) % 60))
-           
-        if timeLeft >= 60 {
-//            WKInterfaceDevice.current().play(.stop)
-//                   let startTime = Date()
-//                   let endTime = startTime.addingTimeInterval(1.0 * 60.0)
-//                   self.saveMindfullAnalysis(startTime: startTime, endTime: endTime)
-//                    timer.invalidate()
-//                   timeLabel.setText("00:00")
-                  
-        }
-
        }
     
     func saveMindfullAnalysis(startTime: Date, endTime: Date) {

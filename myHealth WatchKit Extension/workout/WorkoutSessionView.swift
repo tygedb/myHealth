@@ -25,6 +25,9 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
     @IBOutlet weak var caloriescountLabel: WKInterfaceLabel!
     @IBOutlet weak var distanceLabel: WKInterfaceLabel!
+    @IBOutlet weak var pauseButton: WKInterfaceButton!
+    @IBOutlet weak var endButton: WKInterfaceButton!
+    @IBOutlet weak var resumeButton: WKInterfaceButton!
     
     var healthStore: HKHealthStore!
        var configuration: HKWorkoutConfiguration!
@@ -35,7 +38,10 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
        override func awake(withContext context: Any?) {
            super.awake(withContext: context)
            setupWorkoutSessionInterface(with: context)
-           
+      
+
+       
+        
            // Create the session and obtain the workout builder.
            /// - Tag: CreateWorkout
            do {
@@ -160,20 +166,20 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
        }
        
        /// Action for the "Pause" menu item.
-       @objc
-       func pauseWorkoutAction() {
+       
+       @IBAction func pauseWorkoutAction() {
            pauseWorkout()
        }
        
        /// Action for the "Resume" menu item.
-       @objc
-       func resumeWorkoutAction() {
+      
+       @IBAction func resumeWorkoutAction() {
            resumeWorkout()
        }
        
        /// Action for the "End" menu item.
-       @objc
-       func endWorkoutAction() {
+      
+       @IBAction func endWorkoutAction() {
            endWorkout()
        }
        

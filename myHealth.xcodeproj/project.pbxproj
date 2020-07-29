@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A09F863248B559D00C7911F /* CaffeineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */; };
+		2A0DF48C24AE9AAF006B1117 /* smileyFace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */; };
 		2A1B088424934604000E3EC9 /* HeartHealthyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B088324934604000E3EC9 /* HeartHealthyInterfaceController.swift */; };
 		2A2118ED248486D00057AB8D /* SleepInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */; };
 		2A2F045724801480002DF1B5 /* WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */; };
@@ -78,13 +79,14 @@
 
 /* Begin PBXFileReference section */
 		2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineInterfaceController.swift; sourceTree = "<group>"; };
+		2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileyFace.jpg; sourceTree = "<group>"; };
 		2A1626D42490291400F6275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1626D62490297E00F6275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1B088324934604000E3EC9 /* HeartHealthyInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartHealthyInterfaceController.swift; sourceTree = "<group>"; };
 		2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepInterfaceController.swift; sourceTree = "<group>"; };
 		2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
-		2A21D69C24917CBB00F790A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionView.swift; sourceTree = "<group>"; };
+		2A3F34A524D0D40E00F9456D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A45B60A248CB0CB005F83DC /* toothbrushInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toothbrushInterfaceController.swift; sourceTree = "<group>"; };
 		2A4A0668247DCA2B00894F25 /* WaterInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterInterfaceController.swift; sourceTree = "<group>"; };
 		2A4E82EF24883D98009747B1 /* FoodInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInterfaceController.swift; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 		2A5AC30F2477038400F29F36 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		2A5AC3112477038400F29F36 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		2A5AC3132477038400F29F36 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		2A5AC3172477038400F29F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5AC31A2477038400F29F36 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		2A5AC329247708FE00F29F36 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		2A5AC32B2477097200F29F36 /* myHealth WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -141,7 +142,7 @@
 		2A5AC2F02477038000F29F36 = {
 			isa = PBXGroup;
 			children = (
-				2A21D69C24917CBB00F790A7 /* Info.plist */,
+				2A3F34A524D0D40E00F9456D /* Info.plist */,
 				2A5AC2FF2477038000F29F36 /* myHealth WatchKit App */,
 				2A5AC30E2477038400F29F36 /* myHealth WatchKit Extension */,
 				2A5AC2F82477038000F29F36 /* Products */,
@@ -175,7 +176,7 @@
 				2A5AC30F2477038400F29F36 /* InterfaceController.swift */,
 				2A5AC32B2477097200F29F36 /* myHealth WatchKit Extension.entitlements */,
 				2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */,
-				2A5AC3172477038400F29F36 /* Assets.xcassets */,
+				2ACA349C24AE99F6005360BB /* New Group */,
 				2A7FCE90248CA252000C44ED /* workout */,
 				2A5F077A24883585002D79C9 /* Food */,
 				2A938528248DC6D9005965B7 /* otherHealth */,
@@ -242,6 +243,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		2ACA349C24AE99F6005360BB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,7 +313,7 @@
 		2A5AC2F12477038000F29F36 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Tyge Bellinger";
 				TargetAttributes = {
@@ -360,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0DF48C24AE9AAF006B1117 /* smileyFace.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

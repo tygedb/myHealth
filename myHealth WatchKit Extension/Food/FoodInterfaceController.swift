@@ -108,12 +108,16 @@ class FoodInterfaceController: WKInterfaceController {
     }
     //MARK: Biotin
     @IBAction func biotinAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let biotinQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryBiotin)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -131,14 +135,19 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+}
     //MARK: Carbs
     @IBAction func addAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
         return
    }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let carbQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCarbohydrates)
         let unit = HKUnit.gram()
         let now = Date()
@@ -155,17 +164,22 @@ class FoodInterfaceController: WKInterfaceController {
             print(sucess)
             return
         }
- 
+        }
     }
 }
     //MARK: Protein
     @IBAction func proteinAction(_ value: NSString?) {
-         WKInterfaceDevice.current().play(.success)
+
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let proteinQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryProtein)
         let unit = HKUnit.gram()
         let now = Date()
@@ -185,16 +199,20 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
-        
+        }
     }
     //MARK: Fat
     @IBAction func fatAction(_ value: NSString?) {
-         WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let fatQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFatTotal)
         let unit = HKUnit.gram()
         let now = Date()
@@ -211,16 +229,20 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
- 
+        }
     }
     //MARK: Sugar
     @IBAction func sugarAction(_ value: NSString?) {
-         WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let sugarQuantityType = HKQuantityType.quantityType(forIdentifier: .dietarySugar)
         let unit = HKUnit.gram()
         let now = Date()
@@ -235,15 +257,20 @@ class FoodInterfaceController: WKInterfaceController {
             print(success)
             return
         }
+        }
     }
     //MARK: Chloride
     @IBAction func chlorideAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let chlorideQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryChloride)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -257,6 +284,7 @@ class FoodInterfaceController: WKInterfaceController {
         healthStore.save(sample!) { (success, error) in
             return
         }
+        }
     }
     //MARK: Chromium
     @IBAction func chromiumAction(_ value: NSString?) {
@@ -264,13 +292,18 @@ class FoodInterfaceController: WKInterfaceController {
             return
         }
         let valueString = String(unwrappedValue)
-        let valeDouble = Double(valueString)!
+        let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let chromiumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryChromium)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
         let startDate = now.addingTimeInterval(-60)
         let endDate = now
-        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valeDouble))
+        let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
         var sample: HKQuantitySample? = nil
         if let chromiumQuantityType = chromiumQuantityType {
             sample = HKQuantitySample(type: chromiumQuantityType, quantity: quantityType, start: startDate, end: endDate)
@@ -278,15 +311,21 @@ class FoodInterfaceController: WKInterfaceController {
         healthStore.save(sample!) {(success, error) in
             return
         }
+        }
     }
     //MARK: Fiber
     @IBAction func fiberAction(_ value: NSString?) {
-         WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let fiberQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFiber)
         let unit = HKUnit.gram()
         let now = Date()
@@ -303,15 +342,20 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Copper
     @IBAction func copperAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let copperQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCopper)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -328,14 +372,20 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+    }
   //MARK: Cholesterol
     @IBAction func cholesterolAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+    
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let choQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCholesterol)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -352,14 +402,19 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+    }
     //MARK: Vita C
     @IBAction func vitaC(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let vitaCQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminC)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -375,15 +430,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Vita D
     @IBAction func vitaDAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+       
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let vitaDQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminD)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -400,15 +461,21 @@ class FoodInterfaceController: WKInterfaceController {
             }
         }
     }
+    }
     
     //MARK: Calcium
     @IBAction func calciumAction(_ value: NSString?) {
-         WKInterfaceDevice.current().play(.success)
+       
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let calciumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCalcium)
         let unit = HKUnit.gram()
         let now = Date()
@@ -425,15 +492,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Vita E
     @IBAction func vitaEAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let vitaEQuantiyType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminE)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -449,15 +522,20 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Vita K
     @IBAction func vitaKAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let vitaKQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminK)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -473,16 +551,22 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     
     //MARK: Sat Fat
     @IBAction func satFatAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let satFatQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFatSaturated)
         let unit = HKUnit.gram()
         let now = Date()
@@ -498,16 +582,22 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     
     //MARK: Iron
     @IBAction func ironAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let ironQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryIron)
         let unit = HKUnit.gram()
         let now = Date()
@@ -526,15 +616,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Folate
     @IBAction func folateAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let folateQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFolate)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -550,15 +646,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Nicacin
     @IBAction func niacinAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let niacinQuantiyType = HKQuantityType.quantityType(forIdentifier: .dietaryNiacin)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -574,15 +676,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Potassium
     @IBAction func potasAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+       
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let potasQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryPotassium)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -598,15 +706,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Riboflavin
     @IBAction func riboAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+       
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let riboQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryRiboflavin)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -622,15 +736,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
     //MARK: Thiamin
     @IBAction func thiaminAction(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+      
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let thiaminQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryThiamin)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -646,14 +766,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Vitamin B6
     @IBAction func vitaB6Action(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let vitaB6QuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminB6)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -669,14 +796,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Vitamin B12
     @IBAction func vitaB12Action(_ value: NSString?) {
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let vitaB12QuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminB12)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -692,14 +826,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Mono Fat
     @IBAction func monoFatAction(_ value: NSString?) { //Gram
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let monoFatQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFatMonounsaturated)
         let unit = HKUnit.gram()
         let now = Date()
@@ -715,14 +856,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Poly Fat
     @IBAction func polyFat(_ value: NSString?) {//Gram
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let polyFatQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryFatPolyunsaturated)
         let unit = HKUnit.gram()
         let now = Date()
@@ -738,14 +886,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Iodine
     @IBAction func iodineAction(_ value: NSString?) { //MCG
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let iodineQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryIodine)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -761,14 +916,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Magnesium
     @IBAction func magnesiumAction(_ value: NSString?) { //Milli
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let magnesiumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryMagnesium)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -784,15 +946,22 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
         
     }
+    //MARK: Maganese
     @IBAction func maganeseAction(_ value: NSString?) { //milli
-        WKInterfaceDevice.current().play(.success)
+  
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let maganeseQuantityType =  HKQuantityType.quantityType(forIdentifier: .dietaryManganese)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -808,14 +977,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Molybdenum
     @IBAction func molybdenumAction(_ value: NSString?) {//mcg
-        WKInterfaceDevice.current().play(.success)
+       
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let molyQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryMolybdenum)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -831,14 +1007,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Pantoacid
     @IBAction func pantoacidAction(_ value: NSString?) {//milli
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let panthoQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryPantothenicAcid)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -854,14 +1037,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Phosphorus
     @IBAction func phosphAction(_ value: NSString?) {//milli
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let phosphQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryPhosphorus)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -877,14 +1067,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Selenium
     @IBAction func seleniumAction(_ value: NSString?) {//micro
-        WKInterfaceDevice.current().play(.success)
+        
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let seleniumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietarySelenium)
         let unit = HKUnit.gramUnit(with: .micro)
         let now = Date()
@@ -900,14 +1097,21 @@ class FoodInterfaceController: WKInterfaceController {
                 return
             }
         }
+        }
     }
+    //MARK: Zinc
     @IBAction func zincAction(_ value: NSString?) {//milli
-        WKInterfaceDevice.current().play(.success)
+       
         guard let unwrappedValue = value else {
             return
         }
         let valueString = String(unwrappedValue)
         let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+        WKInterfaceDevice.current().play(.success)
         let zincQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryZinc)
         let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
@@ -922,6 +1126,7 @@ class FoodInterfaceController: WKInterfaceController {
             DispatchQueue.main.async {
                 return
             }
+        }
         }
     }
     

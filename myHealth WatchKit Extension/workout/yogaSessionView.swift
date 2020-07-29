@@ -137,35 +137,23 @@ class yogaSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiveWo
               healthStore = context.healthStore
               configuration = context.configuration
               
-              setupMenuItemsForWorkoutSessionState(.running)
-          }
-          
-          /// Set up the contextual menu based on the workout session state.
-          func setupMenuItemsForWorkoutSessionState(_ state: HKWorkoutSessionState) {
-              clearAllMenuItems()
-              if state == .running {
-                  addMenuItem(with: .pause, title: "Pause", action: #selector(pauseWorkoutAction))
-              } else if state == .paused {
-                  addMenuItem(with: .resume, title: "Resume", action: #selector(resumeWorkoutAction))
-              }
-              addMenuItem(with: .decline, title: "End", action: #selector(endWorkoutAction))
+             
           }
           
           /// Action for the "Pause" menu item.
-          @objc
-          func pauseWorkoutAction() {
+          @IBAction func pauseWorkoutAction() {
               pauseWorkout()
           }
           
           /// Action for the "Resume" menu item.
-          @objc
-          func resumeWorkoutAction() {
+          
+          @IBAction func resumeWorkoutAction() {
               resumeWorkout()
           }
           
           /// Action for the "End" menu item.
-          @objc
-          func endWorkoutAction() {
+          
+          @IBAction func endWorkoutAction() {
               endWorkout()
           }
           
@@ -177,9 +165,7 @@ class yogaSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiveWo
               date: Date
           ) {
               // Dispatch to main, because we are updating the interface.
-              DispatchQueue.main.async {
-                  self.setupMenuItemsForWorkoutSessionState(toState)
-              }
+              
           }
           
           func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {

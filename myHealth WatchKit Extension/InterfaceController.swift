@@ -95,7 +95,7 @@ class InterfaceController: WKInterfaceController {
     }
     @IBAction func MentalHealth() {
         WKInterfaceDevice.current().play(.click)
-        self.presentController(withNames: ["Mental", "Sleep"], contexts: nil)
+        self.presentController(withNames: ["Mental", "Sleep", "Mood"], contexts: nil)
     }
     
   
@@ -106,7 +106,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func symptomAction() {
         if #available(watchOS 7.0, *) {
             WKInterfaceDevice.current().play(.click)
-            self.presentController(withName: "symptom", context: nil)
+            self.presentController(withName: "symptoms", context: nil)
         } else {
             self.presentController(withName: "updateOS", context: nil)
         }
