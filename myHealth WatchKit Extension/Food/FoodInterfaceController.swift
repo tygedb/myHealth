@@ -169,7 +169,6 @@ class FoodInterfaceController: WKInterfaceController {
 }
     //MARK: Protein
     @IBAction func proteinAction(_ value: NSString?) {
-
         guard let unwrappedValue = value else {
             return
         }
@@ -193,7 +192,7 @@ class FoodInterfaceController: WKInterfaceController {
             sample = HKQuantitySample(type: proteinQuantityType, quantity: quantityType, start: startDate, end: endDate)
         }
         healthStore.save(sample!) { (success, error) in
-            DispatchQueue.main.async {
+             DispatchQueue.main.async {
                 print(success)
                 
                 return
@@ -477,7 +476,7 @@ class FoodInterfaceController: WKInterfaceController {
         } else {
         WKInterfaceDevice.current().play(.success)
         let calciumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryCalcium)
-        let unit = HKUnit.gram()
+            let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
         let startDate = now.addingTimeInterval(-60)
         let endDate = now
@@ -508,7 +507,7 @@ class FoodInterfaceController: WKInterfaceController {
         } else {
         WKInterfaceDevice.current().play(.success)
         let vitaEQuantiyType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminE)
-        let unit = HKUnit.gramUnit(with: .micro)
+        let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
         let startDate = now.addingTimeInterval(-60)
         let endDate = now
@@ -599,7 +598,7 @@ class FoodInterfaceController: WKInterfaceController {
         } else {
         WKInterfaceDevice.current().play(.success)
         let ironQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryIron)
-        let unit = HKUnit.gram()
+        let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
         let startDate = now.addingTimeInterval(-60)
         let endDate = now
@@ -782,7 +781,7 @@ class FoodInterfaceController: WKInterfaceController {
         } else {
         WKInterfaceDevice.current().play(.success)
         let vitaB6QuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminB6)
-        let unit = HKUnit.gramUnit(with: .micro)
+        let unit = HKUnit.gramUnit(with: .milli)
         let now = Date()
         let startDate = now.addingTimeInterval(-60)
         let endDate = now

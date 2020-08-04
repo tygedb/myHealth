@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17132" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17140" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
     <device id="watch44"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17115"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17031"/>
     </dependencies>
     <scenes>
@@ -91,19 +91,19 @@
                         <label width="136" height="36" alignment="left" text="Food Tracker" id="mdO-0u-T7D">
                             <fontDescription key="font" type="boldSystem" pointSize="19"/>
                         </label>
-                        <button width="1" alignment="left" title="Heart Healthy Food" id="n6a-6a-uVm">
+                        <button width="1" alignment="left" title="Fruit" id="n6a-6a-uVm">
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="17"/>
                             <connections>
                                 <segue destination="abD-dq-yfM" kind="push" identifier="heartFood" id="WUi-yI-UKt"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Healthy Lungs" id="20h-AS-FeU">
+                        <button width="1" alignment="left" title="Dairy" id="20h-AS-FeU">
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="17"/>
                         </button>
-                        <button width="1" alignment="left" title="Healthy Bones" id="812-S4-EgK">
+                        <button width="1" alignment="left" title="Veggies" id="812-S4-EgK">
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="17"/>
                         </button>
-                        <button width="1" alignment="left" title="Healthy for your Gut" id="p8m-Du-cL8">
+                        <button width="1" alignment="left" title="Root Veggies" id="p8m-Du-cL8">
                             <fontDescription key="font" type="italicSystem" weight="bold" pointSize="17"/>
                         </button>
                         <button width="1" alignment="left" title="Manual" id="Nuw-kx-Vb0">
@@ -550,18 +550,19 @@
         <!--Sleep-->
         <scene sceneID="nac-sq-UTM">
             <objects>
-                <controller identifier="Sleep" spacing="0.0" fullBounds="YES" fullScreen="YES" id="Z4T-TT-jPX" customClass="SleepInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Sleep" spacing="0.0" id="Z4T-TT-jPX" customClass="SleepInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <label width="115" height="46" alignment="left" text="Sleep Tracking" id="sfm-Tx-n80"/>
+                        <label width="115" height="26" alignment="left" text="Nap Tracking" id="sfm-Tx-n80"/>
+                        <label alignment="left" alpha="0.0" text="Label" id="cpH-AW-X2u"/>
                         <group width="136" height="116" alignment="center" layout="overlap" id="RXZ-YR-gFp">
                             <items>
-                                <button width="101" height="106" alignment="center" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="0YD-FQ-N13">
+                                <button width="136" height="186" alignment="center" verticalAlignment="bottom" backgroundImage="play.circle.fill" catalog="system" id="0YD-FQ-N13">
                                     <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="startWithSender:" destination="Z4T-TT-jPX" id="Xnv-kD-vBS"/>
                                     </connections>
                                 </button>
-                                <button width="101" height="106" alignment="center" verticalAlignment="center" backgroundImage="stop.circle.fill" catalog="system" id="TDy-vy-IqY">
+                                <button width="136" height="186" alignment="center" verticalAlignment="bottom" backgroundImage="stop.circle.fill" catalog="system" id="TDy-vy-IqY">
                                     <color key="backgroundColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="stopWithSender:" destination="Z4T-TT-jPX" id="aFe-q0-OIx"/>
@@ -583,25 +584,28 @@
         <!--Mood-->
         <scene sceneID="yrQ-EW-ljr">
             <objects>
-                <controller identifier="Mood" fullBounds="YES" id="7Iq-4R-3Ww" customClass="MoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Mood" spacing="15" id="7Iq-4R-3Ww" customClass="MoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <group width="1" height="143" alignment="left" id="eXb-gM-YMy">
+                        <group width="1" height="105" alignment="left" id="eXb-gM-YMy">
                             <items>
-                                <picker height="140" alignment="center" style="stack" id="WXq-8U-ViT">
+                                <picker height="1" alignment="center" verticalAlignment="center" style="stack" id="WXq-8U-ViT">
                                     <connections>
                                         <action selector="moodPickerAction:" destination="7Iq-4R-3Ww" id="JI0-uA-24y"/>
                                     </connections>
                                 </picker>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Button" id="dhU-2U-hUb"/>
+                        <button width="1" alignment="center" title="Button" id="dhU-2U-hUb"/>
+                        <separator alignment="left" id="XF7-gX-pyU">
+                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
                     </items>
                     <connections>
                         <outlet property="moodPicker" destination="WXq-8U-ViT" id="36v-6b-3dG"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="972.695652173913" y="1388.8392857142858"/>
+            <point key="canvasLocation" x="972.695652173913" y="1378.9732142857142"/>
         </scene>
         <!--toothbrush-->
         <scene sceneID="PUl-6n-sbY">
@@ -652,7 +656,7 @@
         <!--Mental-->
         <scene sceneID="Syr-gS-wFj">
             <objects>
-                <controller identifier="Mental" fullBounds="YES" id="uGw-4j-XUb" customClass="mentalInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Mental" id="uGw-4j-XUb" customClass="mentalInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <label width="136" alignment="left" text="0" id="hSP-15-XCq">
                             <variation key="device=watch38mm" alignment="left" verticalAlignment="top"/>
