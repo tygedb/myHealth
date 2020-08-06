@@ -9,6 +9,7 @@
 import WatchKit
 import UIKit
 import UserNotifications
+import Intents
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
 
@@ -36,6 +37,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
         
     }
     
+    func application(_ application: WKExtension, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+            guard let intent = userActivity.interaction?.intent as? INStartWorkoutIntent else {
+                print("AppDelegate: Start Workout Intent - FALSE")
+                return false
+            }
+            print("AppDelegate: Start Workout Intent - TRUE")
+            print(intent)  
+            return true
+    }
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
@@ -46,6 +56,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
     }
 
     func applicationDidEnterBackground() {
+        INPreferences.requestSiriAuthorization { (status) in
+        }
+        INVocabulary.shared().setVocabularyStrings(["walking in myHealth", "running", "yoga", "elliptical"], of: .workoutActivityName)
+    
         
     }
    

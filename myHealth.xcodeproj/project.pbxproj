@@ -11,6 +11,8 @@
 		2A0DF48C24AE9AAF006B1117 /* smileyFace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */; };
 		2A1B088424934604000E3EC9 /* HeartHealthyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B088324934604000E3EC9 /* HeartHealthyInterfaceController.swift */; };
 		2A2118ED248486D00057AB8D /* SleepInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */; };
+		2A2A161C24D90A3B00D87EAF /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A161B24D90A3B00D87EAF /* IntentHandler.swift */; };
+		2A2A162024D90A3B00D87EAF /* Siri Intents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A2A161924D90A3B00D87EAF /* Siri Intents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A2F045724801480002DF1B5 /* WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */; };
 		2A45B60B248CB0CB005F83DC /* toothbrushInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45B60A248CB0CB005F83DC /* toothbrushInterfaceController.swift */; };
 		2A4A0669247DCA2B00894F25 /* WaterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A0668247DCA2B00894F25 /* WaterInterfaceController.swift */; };
@@ -36,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2A2A161E24D90A3B00D87EAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5AC2F12477038000F29F36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A2A161824D90A3B00D87EAF;
+			remoteInfo = "Siri Intents";
+		};
 		2A5AC2FD2477038000F29F36 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A5AC2F12477038000F29F36 /* Project object */;
@@ -53,6 +62,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2A2A162424D90A3B00D87EAF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A2A162024D90A3B00D87EAF /* Siri Intents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A5AC3202477038400F29F36 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +105,10 @@
 		2A1B088324934604000E3EC9 /* HeartHealthyInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartHealthyInterfaceController.swift; sourceTree = "<group>"; };
 		2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepInterfaceController.swift; sourceTree = "<group>"; };
 		2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		2A2A160624D9048000D87EAF /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		2A2A161924D90A3B00D87EAF /* Siri Intents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Siri Intents.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2A161B24D90A3B00D87EAF /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		2A2A161D24D90A3B00D87EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionView.swift; sourceTree = "<group>"; };
 		2A3F34A524D0D40E00F9456D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A45B60A248CB0CB005F83DC /* toothbrushInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toothbrushInterfaceController.swift; sourceTree = "<group>"; };
@@ -122,6 +146,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A2A161624D90A3B00D87EAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A5AC3072477038400F29F36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,12 +170,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A2A161A24D90A3B00D87EAF /* Siri Intents */ = {
+			isa = PBXGroup;
+			children = (
+				2A2A161B24D90A3B00D87EAF /* IntentHandler.swift */,
+				2A2A161D24D90A3B00D87EAF /* Info.plist */,
+			);
+			path = "Siri Intents";
+			sourceTree = "<group>";
+		};
 		2A5AC2F02477038000F29F36 = {
 			isa = PBXGroup;
 			children = (
 				2A3F34A524D0D40E00F9456D /* Info.plist */,
 				2A5AC2FF2477038000F29F36 /* myHealth WatchKit App */,
 				2A5AC30E2477038400F29F36 /* myHealth WatchKit Extension */,
+				2A2A161A24D90A3B00D87EAF /* Siri Intents */,
 				2A5AC2F82477038000F29F36 /* Products */,
 				2A5AC328247708FD00F29F36 /* Frameworks */,
 			);
@@ -156,6 +197,7 @@
 				2A5AC2F72477038000F29F36 /* myHealth.app */,
 				2A5AC2FB2477038000F29F36 /* myHealth.app */,
 				2A5AC30A2477038400F29F36 /* myHealth.appex */,
+				2A2A161924D90A3B00D87EAF /* Siri Intents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2A5AC329247708FE00F29F36 /* HealthKit.framework */,
+				2A2A160624D9048000D87EAF /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,6 +297,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A2A161824D90A3B00D87EAF /* Siri Intents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2A162124D90A3B00D87EAF /* Build configuration list for PBXNativeTarget "Siri Intents" */;
+			buildPhases = (
+				2A2A161524D90A3B00D87EAF /* Sources */,
+				2A2A161624D90A3B00D87EAF /* Frameworks */,
+				2A2A161724D90A3B00D87EAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Siri Intents";
+			productName = "Siri Intents";
+			productReference = 2A2A161924D90A3B00D87EAF /* Siri Intents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2A5AC2F62477038000F29F36 /* myHealth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A5AC3252477038400F29F36 /* Build configuration list for PBXNativeTarget "myHealth" */;
@@ -297,10 +357,12 @@
 				2A5AC3062477038400F29F36 /* Sources */,
 				2A5AC3072477038400F29F36 /* Frameworks */,
 				2A5AC3082477038400F29F36 /* Resources */,
+				2A2A162424D90A3B00D87EAF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A2A161F24D90A3B00D87EAF /* PBXTargetDependency */,
 			);
 			name = "myHealth WatchKit Extension";
 			productName = "myHealth WatchKit Extension";
@@ -317,6 +379,9 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Tyge Bellinger";
 				TargetAttributes = {
+					2A2A161824D90A3B00D87EAF = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					2A5AC2F62477038000F29F36 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -344,11 +409,19 @@
 				2A5AC2F62477038000F29F36 /* myHealth */,
 				2A5AC2FA2477038000F29F36 /* myHealth WatchKit App */,
 				2A5AC3092477038400F29F36 /* myHealth WatchKit Extension */,
+				2A2A161824D90A3B00D87EAF /* Siri Intents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A2A161724D90A3B00D87EAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A5AC2F52477038000F29F36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,6 +449,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A2A161524D90A3B00D87EAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2A161C24D90A3B00D87EAF /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A5AC3062477038400F29F36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +488,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2A2A161F24D90A3B00D87EAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A2A161824D90A3B00D87EAF /* Siri Intents */;
+			targetProxy = 2A2A161E24D90A3B00D87EAF /* PBXContainerItemProxy */;
+		};
 		2A5AC2FE2477038000F29F36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2A5AC2FA2477038000F29F36 /* myHealth WatchKit App */;
@@ -431,6 +517,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2A2A162224D90A3B00D87EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				INFOPLIST_FILE = "Siri Intents/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tyge.myHealth.watchkitapp.watchkitextension.Siri-Intents";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		2A2A162324D90A3B00D87EAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = GQ37QHB6MK;
+				INFOPLIST_FILE = "Siri Intents/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tyge.myHealth.watchkitapp.watchkitextension.Siri-Intents";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
 		2A5AC31B2477038400F29F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -484,7 +618,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBSC_MODULE = "";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = /Users/tygebellinger/Desktop/myHealth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -543,7 +677,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IBSC_MODULE = "";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = /Users/tygebellinger/Desktop/myHealth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -690,6 +824,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A2A162124D90A3B00D87EAF /* Build configuration list for PBXNativeTarget "Siri Intents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2A162224D90A3B00D87EAF /* Debug */,
+				2A2A162324D90A3B00D87EAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2A5AC2F42477038000F29F36 /* Build configuration list for PBXProject "myHealth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

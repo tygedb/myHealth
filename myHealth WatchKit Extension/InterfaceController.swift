@@ -11,6 +11,7 @@ import Foundation
 import HealthKit
 import CoreLocation
 import UserNotifications
+import Intents
 
 class InterfaceController: WKInterfaceController {
     
@@ -21,6 +22,7 @@ class InterfaceController: WKInterfaceController {
     
     override func didAppear() {
         super.didAppear()
+      
         /// Requesting authorization.
         /// - Tag: RequestAuthorization
         // The quantity type to write to the health store.
