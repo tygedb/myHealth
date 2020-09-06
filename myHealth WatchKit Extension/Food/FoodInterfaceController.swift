@@ -13,7 +13,6 @@ import UIKit
 
 class FoodInterfaceController: WKInterfaceController {
 
-    @IBOutlet weak var caloriesTextField: WKInterfaceLabel!
     @IBOutlet weak var proteinTextField: WKInterfaceTextField!
     @IBOutlet weak var totalfatTextField: WKInterfaceTextField!
     @IBOutlet weak var sugarTextField: WKInterfaceTextField!
@@ -30,7 +29,7 @@ class FoodInterfaceController: WKInterfaceController {
             HKObjectType.quantityType(forIdentifier: .dietaryFiber),
             HKObjectType.quantityType(forIdentifier: .dietaryCalcium),
             HKObjectType.quantityType(forIdentifier: .dietaryIron),
-            
+            HKObjectType.quantityType(forIdentifier: .dietarySodium),
             HKObjectType.quantityType(forIdentifier: .dietaryCopper),
             HKObjectType.quantityType(forIdentifier: .dietaryFolate),
             HKObjectType.quantityType(forIdentifier: .dietaryNiacin),
@@ -72,7 +71,7 @@ class FoodInterfaceController: WKInterfaceController {
             HKObjectType.quantityType(forIdentifier: .dietaryIron),
             HKObjectType.quantityType(forIdentifier: .dietaryBiotin),
             HKObjectType.quantityType(forIdentifier: .dietaryCopper),
-            
+            HKQuantityType.quantityType(forIdentifier: .dietarySodium),
             HKObjectType.quantityType(forIdentifier: .dietaryFolate),
             HKObjectType.quantityType(forIdentifier: .dietaryNiacin),
             HKObjectType.quantityType(forIdentifier: .dietaryPotassium),
@@ -106,6 +105,37 @@ class FoodInterfaceController: WKInterfaceController {
         
         
     }
+    //MARK: Calories
+    @IBAction func calorieAction(_ value: NSString?) {
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+            WKInterfaceDevice.current().play(.success)
+            let calorieQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryEnergyConsumed)
+            let unit = HKUnit.kilocalorie()
+            let now = Date()
+            let startDate = now.addingTimeInterval(-60)
+            let endDate = now
+            let quantityType = HKQuantity(unit: unit, doubleValue: valueDouble)
+            var sample: HKQuantitySample? = nil
+            if let calorieQuantityType = calorieQuantityType {
+                sample = HKQuantitySample(type: calorieQuantityType, quantity: quantityType, start: startDate
+                                          , end: endDate)
+            }
+            healthStore.save(sample!) { (success, error) in
+                DispatchQueue.main.async {
+                    return
+                }
+            }
+        }
+    }
+    
     //MARK: Biotin
     @IBAction func biotinAction(_ value: NSString?) {
         guard let unwrappedValue = value else {
@@ -1128,7 +1158,35 @@ class FoodInterfaceController: WKInterfaceController {
         }
         }
     }
-    
+    //MARK: Sodium
+    @IBAction func sodiumAction(_ value: NSString?) {
+        guard let unwrappedValue = value else {
+            return
+        }
+        let valueString = String(unwrappedValue)
+        let valueDouble = Double(valueString)!
+        if valueDouble == 0 {
+            self.dismiss()
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+            WKInterfaceDevice.current().play(.success)
+            let sodiumQuantityType = HKQuantityType.quantityType(forIdentifier: .dietarySodium)
+            let unit = HKUnit.gramUnit(with: .milli)
+            let now = Date()
+            let startDate = now.addingTimeInterval(-60)
+            let endDate = now
+            let quantityType = HKQuantity(unit: unit, doubleValue: Double(valueDouble))
+            var sample: HKQuantitySample? = nil
+            if let sodiumQuantityType = sodiumQuantityType {
+                sample = HKQuantitySample(type: sodiumQuantityType, quantity: quantityType, start: startDate, end: endDate)
+            }
+            healthStore.save(sample!) { (success, error) in
+                DispatchQueue.main.async {
+                    return
+                }
+            }
+        }
+    }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -1138,6 +1196,7 @@ class FoodInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        }
+
     }
 
-}

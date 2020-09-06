@@ -17,12 +17,24 @@ class InterfaceController: WKInterfaceController {
     
   
     let healthStore = HKHealthStore()
+    @IBOutlet weak var pickerVIew: WKInterfacePicker!
     let workoutView = WorkoutSessionView()
- 
-    
+    var items: [String]! = nil
+//    override func willActivate() {
+//
+//        items = (1...5).map {"menu\($0).png"}
+//        let pickerItems: [WKPickerItem] = items.map {
+//            let pickerItem = WKPickerItem()
+//            pickerItem.contentImage = WKImage(imageName: $0)
+//            return pickerItem
+//        }
+//        pickerVIew.setItems(pickerItems)
+//    }
+  
     override func didAppear() {
         super.didAppear()
-      
+        
+       
         /// Requesting authorization.
         /// - Tag: RequestAuthorization
         // The quantity type to write to the health store.
@@ -42,12 +54,13 @@ class InterfaceController: WKInterfaceController {
         
         
         
+        
+        
         // Request authorization for those quantity types.
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             // Handle error. No error handling in this sample project.
         }
     }
-    
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         if segueIdentifier == "walking" {
             WKInterfaceDevice.current().play(.start)
@@ -85,8 +98,21 @@ class InterfaceController: WKInterfaceController {
 
             return yogaSessionContext(healthStore: healthStore, configuration: configuration)
         }
+        
+      
 
         return nil
+    }
+    @IBAction func pickerAction(_ value: Int) {
+//        func setItems(_ items: [WKPickerItem]) {
+//            if items == 0 {
+//            WKInterfaceDevice.current().play(.start)
+//             let configuration = HKWorkoutConfiguration()
+//             configuration.activityType = .running
+//             configuration.locationType = .outdoor
+//            }
+//             
+//        }
     }
     
     //MARK: Haptic Actions

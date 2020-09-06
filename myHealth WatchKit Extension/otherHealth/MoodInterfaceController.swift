@@ -12,7 +12,7 @@ import Foundation
 
 class MoodInterfaceController: WKInterfaceController {
     
-    @IBOutlet weak var smileyFace: WKInterfaceImage!
+  
     @IBOutlet weak var moodPicker: WKInterfacePicker!
     
     var image: WKImage?
@@ -20,11 +20,11 @@ class MoodInterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        items = (1...5).map { "smileyFace\($0).jpg"}
+        items = (1...5).map { "mood\($0).png"}
         
-        let pickerItems: [WKPickerItem] = items.map {_ in
+        let pickerItems: [WKPickerItem] = items.map {
             let pickerItem = WKPickerItem()
-            pickerItem.contentImage = WKImage(imageName: "smileyFace.jpg")
+            pickerItem.contentImage = WKImage(imageName: $0)
             return pickerItem
         }
         moodPicker.setItems(pickerItems)

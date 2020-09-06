@@ -11,7 +11,7 @@ import Foundation
 import HealthKit
 
 
-class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSessionDelegate {
+class toothbrushInterfaceController: WKInterfaceController {
  
     var timer = Timer()
     var timeLeft = 120
@@ -28,10 +28,26 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
     @IBOutlet weak var startButton: WKInterfaceButton!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        session.delegate = self
-        session = WKExtendedRuntimeSession()
+ 
         startButton.setTitle("Start")
-        
+        guard let categoryType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.toothbrushingEvent) else {
+                  fatalError("*** Unable to create a sleep analysis category type ***")
+              }
+              var shareTypes = Set<HKSampleType>()
+              shareTypes.insert(categoryType)
+
+              var readTypes = Set<HKObjectType>()
+              readTypes.insert(categoryType)
+
+              healthStore.requestAuthorization(toShare: shareTypes, read: readTypes) { (success, error) -> Void in
+                  if success {
+                      print("success")
+                  } else {
+                      print("failure")
+                  }
+
+                  if let error = error { print(error) }
+              }
         func activateHealthKit() {
         let typesToRead = Set([
         
@@ -48,6 +64,8 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
                 
                 
             }
+            
+         
         
         }
         
@@ -62,6 +80,7 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
         session = WKExtendedRuntimeSession()
         session.delegate = self
         session.start(at: Date())
+        let toothbrushingSample = HKCategorySample(type: categoryType, value: HKCategoryValue.notApplicable.rawValue, start: Date().addingTimeInterval(-10000), end: Date)
         let fireDate = Date(timeIntervalSinceNow: 10)
        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
        
@@ -84,15 +103,7 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
     
   
     
-@objc func onTimerFires()
-{
-    let toothbrushQuantityType = HKCategoryType.categoryType(forIdentifier: .toothbrushingEvent)
-    let timeLeftAmount = Int(120)
-    let now = Date()
-    let startDate = now.addingTimeInterval(-60)
-    let endDate = now
-    let unit = HKUnit.minute()
-    var sample: HKCategorySample? = nil
+    @objc func onTimerFires() {
     timeLeft -= 1
     timeLabel.setText("\(timeString(time: TimeInterval(timeLeft)))")
 
@@ -100,17 +111,13 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
         WKInterfaceDevice.current().play(.stop)
         timer.invalidate()
         timeLabel.setText("\(timeString(time: TimeInterval(timeLeft)))")
-//        if let toothBrushQuantityType = toothbrushQuantityType {
-//            sample = HKCategorySample(type: toothBrushQuantityType, value: timeLeftAmount, start: startDate, end: endDate)
-//
-//        }
-//        healthStore.save(sample!) { (success, error) in
-//            DispatchQueue.main.async {
-//                return
-//            }
-//        }
+        healthStore.save(toothbrushingSample) { (result:Bool, error:Error?) in
+        if result{
+            print("Saved")
+        }else{
+            print("error saving toothBrushing",error?.localizedDescription ?? "")
+        }
     }
-  
 }
     func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
         print("Session stopped at \(Date())")
@@ -141,6 +148,6 @@ class toothbrushInterfaceController: WKInterfaceController, WKExtendedRuntimeSes
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
-
+    }
 }
+

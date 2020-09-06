@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A09F863248B559D00C7911F /* CaffeineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */; };
-		2A0DF48C24AE9AAF006B1117 /* smileyFace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */; };
 		2A1B088424934604000E3EC9 /* HeartHealthyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B088324934604000E3EC9 /* HeartHealthyInterfaceController.swift */; };
 		2A2118ED248486D00057AB8D /* SleepInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */; };
+		2A296D7824DF27BB0005A705 /* ProgramObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A296D7724DF27BB0005A705 /* ProgramObject.swift */; };
 		2A2A161C24D90A3B00D87EAF /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A161B24D90A3B00D87EAF /* IntentHandler.swift */; };
 		2A2A162024D90A3B00D87EAF /* Siri Intents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A2A161924D90A3B00D87EAF /* Siri Intents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A2F045724801480002DF1B5 /* WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2F045624801480002DF1B5 /* WorkoutSessionView.swift */; };
@@ -19,20 +19,31 @@
 		2A4E82F024883D98009747B1 /* FoodInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E82EF24883D98009747B1 /* FoodInterfaceController.swift */; };
 		2A5AC2FC2477038000F29F36 /* myHealth.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2A5AC2FB2477038000F29F36 /* myHealth.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A5AC3022477038000F29F36 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5AC3002477038000F29F36 /* Interface.storyboard */; };
-		2A5AC3042477038400F29F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5AC3032477038400F29F36 /* Assets.xcassets */; };
 		2A5AC30B2477038400F29F36 /* myHealth.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A5AC30A2477038400F29F36 /* myHealth.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A5AC3102477038400F29F36 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AC30F2477038400F29F36 /* InterfaceController.swift */; };
 		2A5AC3122477038400F29F36 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AC3112477038400F29F36 /* ExtensionDelegate.swift */; };
 		2A5AC3142477038400F29F36 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AC3132477038400F29F36 /* NotificationController.swift */; };
+		2A65089D24DF569500CE3E14 /* menu5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089524DF569500CE3E14 /* menu5.png */; };
+		2A65089E24DF569500CE3E14 /* Tyge_DinnerPlate.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089624DF569500CE3E14 /* Tyge_DinnerPlate.png */; };
+		2A65089F24DF569500CE3E14 /* Tyge_Water.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089724DF569500CE3E14 /* Tyge_Water.png */; };
+		2A6508A024DF569500CE3E14 /* menu3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089824DF569500CE3E14 /* menu3.png */; };
+		2A6508A124DF569500CE3E14 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089924DF569500CE3E14 /* menu2.png */; };
+		2A6508A224DF569500CE3E14 /* Tyge_Scared.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089A24DF569500CE3E14 /* Tyge_Scared.png */; };
+		2A6508A324DF569500CE3E14 /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089B24DF569500CE3E14 /* sleep.png */; };
+		2A6508A424DF569500CE3E14 /* Tyge_Angry.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A65089C24DF569500CE3E14 /* Tyge_Angry.png */; };
 		2A938521248D94D6005965B7 /* yogaSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938520248D94D6005965B7 /* yogaSessionView.swift */; };
 		2A938523248D94FA005965B7 /* yogaSessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938522248D94FA005965B7 /* yogaSessionContext.swift */; };
 		2A938525248DAD18005965B7 /* ellipticalSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938524248DAD18005965B7 /* ellipticalSessionView.swift */; };
 		2A938527248DAD61005965B7 /* ellipticalSessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A938526248DAD61005965B7 /* ellipticalSessionContext.swift */; };
 		2A9AFAA7248B6A4400561A73 /* AlertNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9AFAA6248B6A4400561A73 /* AlertNotificationController.swift */; };
+		2A9BF47224DF035B00871B8C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BF47124DF035B00871B8C /* ComplicationController.swift */; };
 		2AAE873D2480579000E0A279 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE873C2480579000E0A279 /* HealthKitManager.swift */; };
+		2AC6780524DDFEC8009A723F /* menu1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6780424DDFEC8009A723F /* menu1.png */; };
 		2ACDB13E2492A7EF0041B787 /* SymptomsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDB13D2492A7EF0041B787 /* SymptomsInterfaceController.swift */; };
 		2AECAA7C24945A7900370B9F /* MoodInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECAA7B24945A7900370B9F /* MoodInterfaceController.swift */; };
 		2AEF8745247DB8FA008638D8 /* mentalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF8744247DB8FA008638D8 /* mentalInterfaceController.swift */; };
+		2AF3044B24E06EFC00CADFA0 /* menu4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AF3044A24E06EFC00CADFA0 /* menu4.png */; };
+		2AF3044D24E0914F00CADFA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5AC3032477038400F29F36 /* Assets.xcassets */; };
 		2AF5EC33247CD2E3004EAA5A /* WorkOutSessionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5EC32247CD2E3004EAA5A /* WorkOutSessionContext.swift */; };
 		2AF5EC35247D028E004EAA5A /* NutritionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5EC34247D028E004EAA5A /* NutritionInterfaceController.swift */; };
 /* End PBXBuildFile section */
@@ -99,12 +110,12 @@
 
 /* Begin PBXFileReference section */
 		2A09F862248B559D00C7911F /* CaffeineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineInterfaceController.swift; sourceTree = "<group>"; };
-		2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileyFace.jpg; sourceTree = "<group>"; };
 		2A1626D42490291400F6275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1626D62490297E00F6275C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1B088324934604000E3EC9 /* HeartHealthyInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartHealthyInterfaceController.swift; sourceTree = "<group>"; };
 		2A2118EC248486D00057AB8D /* SleepInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepInterfaceController.swift; sourceTree = "<group>"; };
 		2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		2A296D7724DF27BB0005A705 /* ProgramObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramObject.swift; sourceTree = "<group>"; };
 		2A2A160624D9048000D87EAF /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		2A2A161924D90A3B00D87EAF /* Siri Intents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Siri Intents.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2A161B24D90A3B00D87EAF /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -125,15 +136,26 @@
 		2A5AC31A2477038400F29F36 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		2A5AC329247708FE00F29F36 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		2A5AC32B2477097200F29F36 /* myHealth WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "myHealth WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		2A65089524DF569500CE3E14 /* menu5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu5.png; sourceTree = "<group>"; };
+		2A65089624DF569500CE3E14 /* Tyge_DinnerPlate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tyge_DinnerPlate.png; sourceTree = "<group>"; };
+		2A65089724DF569500CE3E14 /* Tyge_Water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tyge_Water.png; sourceTree = "<group>"; };
+		2A65089824DF569500CE3E14 /* menu3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu3.png; sourceTree = "<group>"; };
+		2A65089924DF569500CE3E14 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
+		2A65089A24DF569500CE3E14 /* Tyge_Scared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tyge_Scared.png; sourceTree = "<group>"; };
+		2A65089B24DF569500CE3E14 /* sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep.png; sourceTree = "<group>"; };
+		2A65089C24DF569500CE3E14 /* Tyge_Angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tyge_Angry.png; sourceTree = "<group>"; };
 		2A938520248D94D6005965B7 /* yogaSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaSessionView.swift; sourceTree = "<group>"; };
 		2A938522248D94FA005965B7 /* yogaSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaSessionContext.swift; sourceTree = "<group>"; };
 		2A938524248DAD18005965B7 /* ellipticalSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ellipticalSessionView.swift; sourceTree = "<group>"; };
 		2A938526248DAD61005965B7 /* ellipticalSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ellipticalSessionContext.swift; sourceTree = "<group>"; };
 		2A9AFAA6248B6A4400561A73 /* AlertNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertNotificationController.swift; sourceTree = "<group>"; };
+		2A9BF47124DF035B00871B8C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		2AAE873C2480579000E0A279 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		2AC6780424DDFEC8009A723F /* menu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu1.png; sourceTree = "<group>"; };
 		2ACDB13D2492A7EF0041B787 /* SymptomsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsInterfaceController.swift; sourceTree = "<group>"; };
 		2AECAA7B24945A7900370B9F /* MoodInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodInterfaceController.swift; sourceTree = "<group>"; };
 		2AEF8744247DB8FA008638D8 /* mentalInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mentalInterfaceController.swift; sourceTree = "<group>"; };
+		2AF3044A24E06EFC00CADFA0 /* menu4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu4.png; sourceTree = "<group>"; };
 		2AF5EC32247CD2E3004EAA5A /* WorkOutSessionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutSessionContext.swift; sourceTree = "<group>"; };
 		2AF5EC34247D028E004EAA5A /* NutritionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NutritionInterfaceController.swift; path = "myHealth WatchKit Extension/Food/NutritionInterfaceController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -218,7 +240,7 @@
 				2A5AC30F2477038400F29F36 /* InterfaceController.swift */,
 				2A5AC32B2477097200F29F36 /* myHealth WatchKit Extension.entitlements */,
 				2A2118EE2484C9FA0057AB8D /* myHealth WatchKit ExtensionRelease.entitlements */,
-				2ACA349C24AE99F6005360BB /* New Group */,
+				2ACA349C24AE99F6005360BB /* Images */,
 				2A7FCE90248CA252000C44ED /* workout */,
 				2A5F077A24883585002D79C9 /* Food */,
 				2A938528248DC6D9005965B7 /* otherHealth */,
@@ -282,16 +304,27 @@
 				2A5AC3132477038400F29F36 /* NotificationController.swift */,
 				2AAE873C2480579000E0A279 /* HealthKitManager.swift */,
 				2A9AFAA6248B6A4400561A73 /* AlertNotificationController.swift */,
+				2A9BF47124DF035B00871B8C /* ComplicationController.swift */,
+				2A296D7724DF27BB0005A705 /* ProgramObject.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
 		};
-		2ACA349C24AE99F6005360BB /* New Group */ = {
+		2ACA349C24AE99F6005360BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				2A0DF48B24AE9AAF006B1117 /* smileyFace.jpg */,
+				2AC6780424DDFEC8009A723F /* menu1.png */,
+				2A65089924DF569500CE3E14 /* menu2.png */,
+				2A65089824DF569500CE3E14 /* menu3.png */,
+				2AF3044A24E06EFC00CADFA0 /* menu4.png */,
+				2A65089524DF569500CE3E14 /* menu5.png */,
+				2A65089C24DF569500CE3E14 /* Tyge_Angry.png */,
+				2A65089624DF569500CE3E14 /* Tyge_DinnerPlate.png */,
+				2A65089A24DF569500CE3E14 /* Tyge_Scared.png */,
+				2A65089B24DF569500CE3E14 /* sleep.png */,
+				2A65089724DF569500CE3E14 /* Tyge_Water.png */,
 			);
-			path = "New Group";
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5AC3042477038400F29F36 /* Assets.xcassets in Resources */,
+				2AF3044D24E0914F00CADFA0 /* Assets.xcassets in Resources */,
 				2A5AC3022477038000F29F36 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +475,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0DF48C24AE9AAF006B1117 /* smileyFace.jpg in Resources */,
+				2A6508A424DF569500CE3E14 /* Tyge_Angry.png in Resources */,
+				2A6508A124DF569500CE3E14 /* menu2.png in Resources */,
+				2A65089F24DF569500CE3E14 /* Tyge_Water.png in Resources */,
+				2AF3044B24E06EFC00CADFA0 /* menu4.png in Resources */,
+				2A6508A224DF569500CE3E14 /* Tyge_Scared.png in Resources */,
+				2A65089D24DF569500CE3E14 /* menu5.png in Resources */,
+				2A6508A024DF569500CE3E14 /* menu3.png in Resources */,
+				2A6508A324DF569500CE3E14 /* sleep.png in Resources */,
+				2A65089E24DF569500CE3E14 /* Tyge_DinnerPlate.png in Resources */,
+				2AC6780524DDFEC8009A723F /* menu1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,10 +518,12 @@
 				2AF5EC35247D028E004EAA5A /* NutritionInterfaceController.swift in Sources */,
 				2A938527248DAD61005965B7 /* ellipticalSessionContext.swift in Sources */,
 				2A09F863248B559D00C7911F /* CaffeineInterfaceController.swift in Sources */,
+				2A296D7824DF27BB0005A705 /* ProgramObject.swift in Sources */,
 				2A2F045724801480002DF1B5 /* WorkoutSessionView.swift in Sources */,
 				2A938523248D94FA005965B7 /* yogaSessionContext.swift in Sources */,
 				2A9AFAA7248B6A4400561A73 /* AlertNotificationController.swift in Sources */,
 				2AECAA7C24945A7900370B9F /* MoodInterfaceController.swift in Sources */,
+				2A9BF47224DF035B00871B8C /* ComplicationController.swift in Sources */,
 				2A5AC3122477038400F29F36 /* ExtensionDelegate.swift in Sources */,
 				2A5AC3102477038400F29F36 /* InterfaceController.swift in Sources */,
 			);
@@ -522,7 +566,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				INFOPLIST_FILE = "Siri Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -546,7 +590,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				INFOPLIST_FILE = "Siri Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -696,7 +740,7 @@
 				CODE_SIGN_ENTITLEMENTS = "myHealth WatchKit Extension/myHealth WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				INFOPLIST_FILE = "myHealth WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -722,7 +766,7 @@
 				CODE_SIGN_ENTITLEMENTS = "myHealth WatchKit Extension/myHealth WatchKit ExtensionRelease.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				INFOPLIST_FILE = "myHealth WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -748,7 +792,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				IBSC_MODULE = "";
 				INFOPLIST_FILE = "myHealth WatchKit App/Info.plist";
@@ -773,7 +817,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				IBSC_MODULE = "";
 				INFOPLIST_FILE = "myHealth WatchKit App/Info.plist";
@@ -796,7 +840,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				INFOPLIST_FILE = Info.plist;
 				MARKETING_VERSION = 1.0;
@@ -811,7 +855,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = GQ37QHB6MK;
 				INFOPLIST_FILE = Info.plist;
 				MARKETING_VERSION = 1.0;

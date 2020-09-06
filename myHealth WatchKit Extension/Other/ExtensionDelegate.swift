@@ -12,9 +12,14 @@ import UserNotifications
 import Intents
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
-
+//    var programs: [ProgramObject] = []
+    
     func applicationDidFinishLaunching() {
        UNUserNotificationCenter.current().delegate = self
+//
+//        let progObj = ProgramObject()
+//        let calendar = Calendar.current
+//        let start1 = calendar.date(from: )
     }
         // Perform any final initialization of your application
  

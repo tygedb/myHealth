@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>NSSiriUsageDescription</key>
-	<string>Using Siri to make requests to start actions in app</string>
 	<key>CFBundleDisplayName</key>
 	<string>myHealth</string>
 	<key>CFBundleExecutable</key>
@@ -22,10 +20,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>All of your health data tracked in myHealth will be shared with the Health app</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>All of your health data tracked in myHealth will be updated in the Health app</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

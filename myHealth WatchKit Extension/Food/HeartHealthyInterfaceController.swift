@@ -81,17 +81,17 @@ class HeartHealthyInterfaceController: WKInterfaceController {
       
     }
     
-    @IBAction func asparagusAction() {
+    @IBAction func appleAction() {
         WKInterfaceDevice.current().play(.success)
         //MARK: ASP Quantity Type
-        let aspQuantityTypeCal = HKQuantityType.quantityType(forIdentifier: .dietaryEnergyConsumed)
-        let asparagusQuantityTypeP = HKQuantityType.quantityType(forIdentifier: .dietaryProtein) // Protein
-        let aspQuantityTypeFi = HKQuantityType.quantityType(forIdentifier: .dietaryFiber) // Fiber
-        let aspQuantityTypeCarb = HKQuantityType.quantityType(forIdentifier: .dietaryCarbohydrates) // Carbs
-        let aspQuantityTypeP = HKQuantityType.quantityType(forIdentifier: .dietaryPotassium) // Potassium
-        let aspQuantityTypeN = HKQuantityType.quantityType(forIdentifier: .dietaryNiacin) // Niacin
-        let aspQuantityTypeThi = HKQuantityType.quantityType(forIdentifier: .dietaryThiamin) //Thiamin
-        let aspQuantityTypeRib = HKQuantityType.quantityType(forIdentifier: .dietaryRiboflavin) //Rib
+        let aplQuantityTypeCal = HKQuantityType.quantityType(forIdentifier: .dietaryEnergyConsumed)
+        let aplQuantityTypeP = HKQuantityType.quantityType(forIdentifier: .dietaryProtein) // Protein
+        let aplQuantityTypeFi = HKQuantityType.quantityType(forIdentifier: .dietaryFiber) // Fiber
+        let aplQuantityTypeCarb = HKQuantityType.quantityType(forIdentifier: .dietaryCarbohydrates) // Carbs
+        let applQuantityTypeP = HKQuantityType.quantityType(forIdentifier: .dietaryPotassium) // Potassium
+        let aplQuantityTypeN = HKQuantityType.quantityType(forIdentifier: .dietaryNiacin) // Niacin
+        let aplQuantityTypeThi = HKQuantityType.quantityType(forIdentifier: .dietaryThiamin) //Thiamin
+        let aplQuantityTypeRib = HKQuantityType.quantityType(forIdentifier: .dietaryRiboflavin) //Rib
         let aspQuantityTypeVitB6 = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminB6) //VitB6
         let aspQuantityTypeVitA = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminA) // Vit A
         let aspQuantityTypeVitK = HKQuantityType.quantityType(forIdentifier: .dietaryVitaminK) // Vit K
@@ -167,52 +167,52 @@ class HeartHealthyInterfaceController: WKInterfaceController {
         var sample12: HKQuantitySample? = nil
         var sample13: HKQuantitySample? = nil
         var sample14: HKQuantitySample? = nil
-        //MARK: ASP SAMPLES
-        if let asparagusQuantityTypeP = asparagusQuantityTypeP {
-            sample0 = HKQuantitySample(type: asparagusQuantityTypeP, quantity: quantity1, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeFi = aspQuantityTypeFi {
-            sample1 = HKQuantitySample(type: aspQuantityTypeFi, quantity: quantity2, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeCarb = aspQuantityTypeCarb {
-            sample2 = HKQuantitySample(type: aspQuantityTypeCarb, quantity: quantity3, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeP = aspQuantityTypeP {
-            sample3 = HKQuantitySample(type: aspQuantityTypeP, quantity: quantity4, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeN = aspQuantityTypeN {
-            sample4 = HKQuantitySample(type: aspQuantityTypeN, quantity: quantity5, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeThi = aspQuantityTypeThi {
-            sample5 = HKQuantitySample(type: aspQuantityTypeThi, quantity: quantity6, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeRib = aspQuantityTypeRib {
-            sample6 = HKQuantitySample(type: aspQuantityTypeRib, quantity: quantity7, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeVitB6 = aspQuantityTypeVitB6 {
-            sample7 = HKQuantitySample(type: aspQuantityTypeVitB6, quantity: quantity8, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeVitA = aspQuantityTypeVitA {
-            sample8 = HKQuantitySample(type: aspQuantityTypeVitA, quantity: quantity9, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeVitK = aspQuantityTypeVitK {
-            sample9 = HKQuantitySample(type: aspQuantityTypeVitK, quantity: quantity10, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeVitC = aspQuantityTypeVitC {
-            sample10 = HKQuantitySample(type: aspQuantityTypeVitC, quantity: quantity11, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeCop = aspQuantityTypeCop {
-            sample11 = HKQuantitySample(type: aspQuantityTypeCop, quantity: quantity12, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeFo = aspQuantityTypeFo {
-            sample12 = HKQuantitySample(type: aspQuantityTypeFo, quantity: quantity13, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeIron = aspQuantityTypeIron {
-            sample13 = HKQuantitySample(type: aspQuantityTypeIron, quantity: quantity0, start: startDate, end: endDate)
-        }
-        if let aspQuantityTypeCal = aspQuantityTypeCal {
-            sample14 = HKQuantitySample(type: aspQuantityTypeCal, quantity: quantity14, start: startDate, end: endDate)
-        }
+//        //MARK: ASP SAMPLES
+//        if let asparagusQuantityTypeP = asparagusQuantityTypeP {
+//            sample0 = HKQuantitySample(type: asparagusQuantityTypeP, quantity: quantity1, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeFi = aspQuantityTypeFi {
+//            sample1 = HKQuantitySample(type: aspQuantityTypeFi, quantity: quantity2, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeCarb = aspQuantityTypeCarb {
+//            sample2 = HKQuantitySample(type: aspQuantityTypeCarb, quantity: quantity3, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeP = aspQuantityTypeP {
+//            sample3 = HKQuantitySample(type: aspQuantityTypeP, quantity: quantity4, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeN = aspQuantityTypeN {
+//            sample4 = HKQuantitySample(type: aspQuantityTypeN, quantity: quantity5, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeThi = aspQuantityTypeThi {
+//            sample5 = HKQuantitySample(type: aspQuantityTypeThi, quantity: quantity6, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeRib = aspQuantityTypeRib {
+//            sample6 = HKQuantitySample(type: aspQuantityTypeRib, quantity: quantity7, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeVitB6 = aspQuantityTypeVitB6 {
+//            sample7 = HKQuantitySample(type: aspQuantityTypeVitB6, quantity: quantity8, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeVitA = aspQuantityTypeVitA {
+//            sample8 = HKQuantitySample(type: aspQuantityTypeVitA, quantity: quantity9, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeVitK = aspQuantityTypeVitK {
+//            sample9 = HKQuantitySample(type: aspQuantityTypeVitK, quantity: quantity10, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeVitC = aspQuantityTypeVitC {
+//            sample10 = HKQuantitySample(type: aspQuantityTypeVitC, quantity: quantity11, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeCop = aspQuantityTypeCop {
+//            sample11 = HKQuantitySample(type: aspQuantityTypeCop, quantity: quantity12, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeFo = aspQuantityTypeFo {
+//            sample12 = HKQuantitySample(type: aspQuantityTypeFo, quantity: quantity13, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeIron = aspQuantityTypeIron {
+//            sample13 = HKQuantitySample(type: aspQuantityTypeIron, quantity: quantity0, start: startDate, end: endDate)
+//        }
+//        if let aspQuantityTypeCal = aspQuantityTypeCal {
+//            sample14 = HKQuantitySample(type: aspQuantityTypeCal, quantity: quantity14, start: startDate, end: endDate)
+//        }
         //MARK: HealthStore Save
         healthStore.save(sample0!) { (success, error) in
             DispatchQueue.main.async {

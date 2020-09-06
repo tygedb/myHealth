@@ -38,7 +38,7 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
        override func awake(withContext context: Any?) {
            super.awake(withContext: context)
            setupWorkoutSessionInterface(with: context)
-      
+        resumeButton.setAlpha(0)
 
        
         
@@ -168,18 +168,27 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
        /// Action for the "Pause" menu item.
        
        @IBAction func pauseWorkoutAction() {
-           pauseWorkout()
+        pauseWorkout()
+        pauseButton.setAlpha(0)
+        resumeButton.setAlpha(1)
+        WKInterfaceDevice.current().play(.stop)
+          
        }
        
        /// Action for the "Resume" menu item.
       
        @IBAction func resumeWorkoutAction() {
-           resumeWorkout()
+        resumeWorkout()
+        pauseButton.setAlpha(1)
+        resumeButton.setAlpha(0)
+        WKInterfaceDevice.current().play(.start)
+          
        }
        
        /// Action for the "End" menu item.
       
        @IBAction func endWorkoutAction() {
+        WKInterfaceDevice.current().play(.stop)
            endWorkout()
        }
        
@@ -199,7 +208,7 @@ class WorkoutSessionView: WKInterfaceController, HKWorkoutSessionDelegate, HKLiv
        func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
            // No error handling in this sample project.
        }
-       
+        
        // MARK: - Update the interface
        
        /// Retreive the WKInterfaceLabel object for the quantity types we are observing.

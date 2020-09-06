@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17140" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17154" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
     <device id="watch44"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17115"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17031"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17034"/>
     </dependencies>
     <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="kcV-Po-lGA">
+            <objects>
+                <controller fullBounds="YES" id="qR1-JK-PYI" customClass="InterfaceController" customModule="myHealth" customModuleProvider="target">
+                    <items>
+                        <label width="100" alignment="left" text="myHealth" id="FMR-l9-GAy"/>
+                        <picker height="147" alignment="center" verticalAlignment="center" style="stack" id="HPw-jE-pre">
+                            <connections>
+                                <action selector="pickerAction:" destination="qR1-JK-PYI" id="rbq-6B-teh"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="pickerVIew" destination="HPw-jE-pre" id="snu-B5-WfP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="441.26086956521738" y="576.02678571428567"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <label width="136" height="27" alignment="left" text="Fitness" id="4GS-Qr-7he">
-                            <fontDescription key="font" type="boldSystem" pointSize="19"/>
+                        <label width="136" height="27" alignment="left" text="myHealth" id="4GS-Qr-7he">
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="19"/>
                         </label>
                         <group width="219" height="182" alignment="center" verticalAlignment="center" layout="vertical" id="uDG-iZ-odx">
                             <items>
@@ -46,15 +65,16 @@
                         </group>
                         <group width="1" alignment="center" verticalAlignment="bottom" id="Mni-uR-mvv">
                             <items>
-                                <button width="89" alignment="left" verticalAlignment="bottom" title="Toothbrush" id="0mb-4D-ZGe">
-                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
-                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                <button width="89" alignment="left" verticalAlignment="bottom" title="Dental" id="0mb-4D-ZGe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="15"/>
                                     <connections>
                                         <action selector="toothbrush" destination="AgC-eL-Hgc" id="XB4-uR-GgQ"/>
                                     </connections>
                                 </button>
                                 <button width="89" alignment="left" verticalAlignment="bottom" title="Nutrition" id="PGU-Nj-wnO">
-                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="15"/>
                                     <connections>
                                         <action selector="nutritionAction" destination="AgC-eL-Hgc" id="hyr-9z-E7w"/>
                                     </connections>
@@ -63,17 +83,11 @@
                         </group>
                         <group width="1" alignment="center" verticalAlignment="bottom" id="1Ft-vm-ZU4">
                             <items>
-                                <button width="89" alignment="left" verticalAlignment="bottom" title="Mental" id="xMv-fz-dtH">
-                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <button width="136" alignment="center" verticalAlignment="bottom" title="Mental" id="xMv-fz-dtH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="italicSystem" weight="bold" pointSize="16"/>
                                     <connections>
                                         <action selector="MentalHealth" destination="AgC-eL-Hgc" id="dz0-5t-IVl"/>
-                                    </connections>
-                                </button>
-                                <button width="89" alignment="left" verticalAlignment="bottom" title="Symptoms" id="VY1-lb-FaT">
-                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
-                                    <fontDescription key="font" type="system" pointSize="14"/>
-                                    <connections>
-                                        <action selector="symptomAction" destination="AgC-eL-Hgc" id="yt9-Tx-YgO"/>
                                     </connections>
                                 </button>
                             </items>
@@ -81,7 +95,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="587" y="861"/>
+            <point key="canvasLocation" x="400.60869565217388" y="1064.7767857142858"/>
         </scene>
         <!--Nutrition-->
         <scene sceneID="H9L-kh-QUh">
@@ -125,22 +139,22 @@
                         <label width="136" alignment="left" text="Heart Healthy Food" textAlignment="left" numberOfLines="0" id="jiQ-Js-r8h">
                             <fontDescription key="font" type="boldSystem" pointSize="14"/>
                         </label>
-                        <button width="1" alignment="left" title="Asparagus" id="xLR-af-G86">
+                        <button width="1" alignment="left" title="Apple" id="xLR-af-G86">
                             <connections>
-                                <action selector="asparagusAction" destination="abD-dq-yfM" id="GrA-Ul-Jb6"/>
+                                <action selector="appleAction" destination="abD-dq-yfM" id="4A2-Et-izJ"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Tuna" id="1zi-dJ-6B2">
+                        <button width="1" alignment="left" title="Apricot" id="1zi-dJ-6B2">
                             <connections>
                                 <action selector="tunaAction" destination="abD-dq-yfM" id="hPO-0Y-Ye2"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Salmon" id="IuZ-T4-UEy">
+                        <button width="1" alignment="left" title="Avacado" id="IuZ-T4-UEy">
                             <connections>
                                 <action selector="salmonAction" destination="abD-dq-yfM" id="P2C-nt-d4j"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Strawberry" id="AKa-Ux-nST">
+                        <button width="1" alignment="left" title="Banana" id="AKa-Ux-nST">
                             <connections>
                                 <action selector="strawberryAction" destination="abD-dq-yfM" id="tr8-Eo-cua"/>
                             </connections>
@@ -150,7 +164,7 @@
                                 <action selector="blueberryAction" destination="abD-dq-yfM" id="h2H-9x-0Yw"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="2 Baby Carrots" id="FLj-fc-WSH">
+                        <button width="1" alignment="left" title="Blackberry" id="FLj-fc-WSH">
                             <connections>
                                 <action selector="carrotsAction" destination="abD-dq-yfM" id="igU-3b-cNK"/>
                             </connections>
@@ -165,37 +179,34 @@
             <objects>
                 <controller identifier="manualOne" id="9C2-T2-T6t" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <textField width="1" alignment="center" placeholder="Biotin" id="pJN-De-OHb">
+                        <textField width="1" alignment="center" placeholder="Protein" textContentType="tel" id="VnY-JS-7w9">
                             <connections>
-                                <action selector="biotinAction:" destination="9C2-T2-T6t" id="XDc-PE-HgS"/>
+                                <action selector="proteinAction:" destination="9C2-T2-T6t" id="OQV-kY-KWM"/>
                             </connections>
                         </textField>
-                        <group width="1" alignment="left" spacing="8" id="N0s-0U-GHs">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Carbs" id="84c-cz-i2i">
-                                    <connections>
-                                        <action selector="addAction:" destination="9C2-T2-T6t" id="4Tn-OS-Se2"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" spacing="8" id="EVM-YP-MvZ">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Calcium" id="mMx-Qn-gnK">
-                                    <connections>
-                                        <action selector="calciumAction:" destination="9C2-T2-T6t" id="SCU-1f-D34"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <textField width="1" alignment="center" placeholder="Copper" id="Y4K-pd-1ga">
+                        <textField width="1" alignment="center" placeholder="Carbs" textContentType="tel" id="84c-cz-i2i">
                             <connections>
-                                <action selector="copperAction:" destination="9C2-T2-T6t" id="3bm-q2-X1W"/>
+                                <action selector="addAction:" destination="9C2-T2-T6t" id="4Tn-OS-Se2"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Cholesterol" id="JvR-4N-jKC">
+                        <textField width="1" alignment="center" placeholder="Sugar" textContentType="tel" id="8rW-Vp-csg">
                             <connections>
-                                <action selector="cholesterolAction:" destination="9C2-T2-T6t" id="ooe-6V-ghE"/>
+                                <action selector="sugarAction:" destination="9C2-T2-T6t" id="ENa-vP-DIq"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="left" placeholder="Calories" textContentType="tel" id="ngB-QU-xIi">
+                            <connections>
+                                <action selector="calorieAction:" destination="9C2-T2-T6t" id="261-QO-7fh"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Fat" textContentType="tel" id="Psh-19-KDo">
+                            <connections>
+                                <action selector="fatAction:" destination="9C2-T2-T6t" id="mSu-XK-bPh"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Fiber" textContentType="tel" id="w8w-St-Zg3">
+                            <connections>
+                                <action selector="fiberAction:" destination="9C2-T2-T6t" id="PHr-FT-hBo"/>
                             </connections>
                         </textField>
                     </items>
@@ -213,43 +224,36 @@
             <objects>
                 <controller identifier="manualTwo" contentMode="center" id="bEt-xM-aZR" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <textField width="1" alignment="center" placeholder="Chloride" id="rT1-bH-zzL">
+                        <textField width="1" alignment="center" placeholder="Cholesterol" textContentType="tel" id="JvR-4N-jKC">
+                            <connections>
+                                <action selector="cholesterolAction:" destination="9C2-T2-T6t" id="ooe-6V-ghE"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Chloride" textContentType="tel" id="rT1-bH-zzL">
                             <connections>
                                 <action selector="chlorideAction:" destination="bEt-xM-aZR" id="lJO-hx-PhF"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Chromium" id="4gm-10-mx4">
+                        <textField width="1" alignment="center" placeholder="Copper" textContentType="tel" id="Y4K-pd-1ga">
+                            <connections>
+                                <action selector="copperAction:" destination="9C2-T2-T6t" id="3bm-q2-X1W"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Chromium" textContentType="tel" id="4gm-10-mx4">
                             <connections>
                                 <action selector="chromiumAction:" destination="bEt-xM-aZR" id="yFS-NU-fAf"/>
                             </connections>
                         </textField>
-                        <group width="1" alignment="left" spacing="8" id="CQD-Wp-wVm">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Protein" id="VnY-JS-7w9">
-                                    <connections>
-                                        <action selector="proteinAction:" destination="9C2-T2-T6t" id="OQV-kY-KWM"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" spacing="8" id="KI1-6C-ksk">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Fat" id="Psh-19-KDo">
-                                    <connections>
-                                        <action selector="fatAction:" destination="9C2-T2-T6t" id="mSu-XK-bPh"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" spacing="8" id="Ipp-bA-qbA">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Sugar" id="8rW-Vp-csg">
-                                    <connections>
-                                        <action selector="sugarAction:" destination="9C2-T2-T6t" id="ENa-vP-DIq"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
+                        <textField width="1" alignment="left" placeholder="Sodium" textContentType="tel" id="bFE-lW-7xS">
+                            <connections>
+                                <action selector="sodiumAction:" destination="bEt-xM-aZR" id="Fej-I7-fOc"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Biotin" textContentType="tel" id="pJN-De-OHb">
+                            <connections>
+                                <action selector="biotinAction:" destination="9C2-T2-T6t" id="XDc-PE-HgS"/>
+                            </connections>
+                        </textField>
                     </items>
                 </controller>
             </objects>
@@ -260,27 +264,27 @@
             <objects>
                 <controller identifier="manualSeven" id="wx9-El-ymh" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <textField width="1" alignment="center" placeholder="Molybdenum" id="Fhd-K1-oYL">
+                        <textField width="1" alignment="center" placeholder="Molybdenum" textContentType="tel" id="Fhd-K1-oYL">
                             <connections>
                                 <action selector="molybdenumAction:" destination="wx9-El-ymh" id="WIC-4J-VEa"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="PantothenicAcid" id="lWL-FN-S1h">
+                        <textField width="1" alignment="center" placeholder="PantothenicAcid" textContentType="tel" id="lWL-FN-S1h">
                             <connections>
                                 <action selector="pantoacidAction:" destination="wx9-El-ymh" id="gU5-SX-SNM"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Phosphorus" id="TMv-eg-V2M">
+                        <textField width="1" alignment="center" placeholder="Phosphorus" textContentType="tel" id="TMv-eg-V2M">
                             <connections>
                                 <action selector="phosphAction:" destination="wx9-El-ymh" id="0b2-j9-TV2"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Selenium" id="cM9-v0-usG">
+                        <textField width="1" alignment="center" placeholder="Selenium" textContentType="tel" id="cM9-v0-usG">
                             <connections>
                                 <action selector="seleniumAction:" destination="wx9-El-ymh" id="zwl-2R-OfT"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Zinc" id="0RP-BL-JOM">
+                        <textField width="1" alignment="center" placeholder="Zinc" textContentType="tel" id="0RP-BL-JOM">
                             <connections>
                                 <action selector="zincAction:" destination="wx9-El-ymh" id="YBw-PR-ajv"/>
                             </connections>
@@ -288,77 +292,69 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="344" y="1990"/>
+            <point key="canvasLocation" x="335" y="2121"/>
         </scene>
         <!--manualThree-->
         <scene sceneID="hjZ-KA-o7T">
             <objects>
                 <controller identifier="manualThree" id="f3J-WX-aWx" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" spacing="8" id="nvy-TN-x1O">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Fiber" id="w8w-St-Zg3">
-                                    <connections>
-                                        <action selector="fiberAction:" destination="9C2-T2-T6t" id="PHr-FT-hBo"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" spacing="8" id="JPf-eD-tVM">
-                            <items>
-                                <textField width="1" alignment="center" placeholder="Iron" id="d4Y-NR-D9a">
-                                    <connections>
-                                        <action selector="ironAction:" destination="9C2-T2-T6t" id="JrL-li-d4z"/>
-                                    </connections>
-                                </textField>
-                            </items>
-                        </group>
-                        <textField width="1" alignment="center" placeholder="Folate" id="cGG-86-mIz">
+                        <textField width="1" alignment="center" placeholder="Iron" textContentType="tel" id="d4Y-NR-D9a">
+                            <connections>
+                                <action selector="ironAction:" destination="9C2-T2-T6t" id="JrL-li-d4z"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Folate" textContentType="tel" id="cGG-86-mIz">
                             <connections>
                                 <action selector="folateAction:" destination="f3J-WX-aWx" id="FF5-mF-Qjf"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Niacin" id="TNH-aP-mBv">
+                        <textField width="1" alignment="center" placeholder="Niacin" textContentType="tel" id="TNH-aP-mBv">
                             <connections>
                                 <action selector="niacinAction:" destination="f3J-WX-aWx" id="FQy-u2-QMk"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Potassium" id="bUs-h6-xuW">
+                        <textField width="1" alignment="center" placeholder="Potassium" textContentType="tel" id="bUs-h6-xuW">
                             <connections>
                                 <action selector="potasAction:" destination="f3J-WX-aWx" id="4S8-72-ykz"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" placeholder="Calcium" textContentType="tel" id="mMx-Qn-gnK">
+                            <connections>
+                                <action selector="calciumAction:" destination="9C2-T2-T6t" id="SCU-1f-D34"/>
                             </connections>
                         </textField>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-268" y="2121"/>
+            <point key="canvasLocation" x="122" y="1828"/>
         </scene>
         <!--manualFour-->
         <scene sceneID="gdn-pV-RKQ">
             <objects>
                 <controller identifier="manualFour" id="KeZ-st-vk2" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <textField width="1" alignment="center" placeholder="Riboflavin" id="2RZ-em-hV8">
+                        <textField width="1" alignment="center" placeholder="Riboflavin" textContentType="tel" id="2RZ-em-hV8">
                             <connections>
                                 <action selector="riboAction:" destination="KeZ-st-vk2" id="EQu-PG-3Ws"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Thiamin" id="pdW-m2-7yT">
+                        <textField width="1" alignment="center" placeholder="Thiamin" textContentType="tel" id="pdW-m2-7yT">
                             <connections>
                                 <action selector="thiaminAction:" destination="KeZ-st-vk2" id="FuH-cw-8dJ"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin A" id="sFR-eD-ca6">
+                        <textField width="1" alignment="center" placeholder="Vitamin A" textContentType="tel" id="sFR-eD-ca6">
                             <connections>
                                 <action selector="ironAction:" destination="9C2-T2-T6t" id="Wro-UA-eyJ"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin B6" id="SSA-rM-Q9f">
+                        <textField width="1" alignment="center" placeholder="Vitamin B6" textContentType="tel" id="SSA-rM-Q9f">
                             <connections>
                                 <action selector="vitaB6Action:" destination="KeZ-st-vk2" id="8qX-lv-WLg"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin B12" id="i5n-f5-WQ4">
+                        <textField width="1" alignment="center" placeholder="Vitamin B12" textContentType="tel" id="i5n-f5-WQ4">
                             <connections>
                                 <action selector="vitaB12Action:" destination="KeZ-st-vk2" id="gQw-DC-qve"/>
                             </connections>
@@ -366,34 +362,34 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-65" y="2121"/>
+            <point key="canvasLocation" x="-268" y="2127"/>
         </scene>
         <!--manualFive-->
         <scene sceneID="frB-Rh-Lfo">
             <objects>
                 <controller identifier="manualFive" id="cUH-7r-iCA" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <textField width="1" alignment="center" placeholder="Vitamin C" id="gRg-rt-Eqh">
+                        <textField width="1" alignment="center" placeholder="Vitamin C" textContentType="tel" id="gRg-rt-Eqh">
                             <connections>
                                 <action selector="vitaC:" destination="cUH-7r-iCA" id="6l9-2a-1y4"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin D" id="3Tt-bi-bgn">
+                        <textField width="1" alignment="center" placeholder="Vitamin D" textContentType="tel" id="3Tt-bi-bgn">
                             <connections>
                                 <action selector="vitaDAction:" destination="cUH-7r-iCA" id="oOw-LV-bHW"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin E" id="UwI-Rq-v2S">
+                        <textField width="1" alignment="center" placeholder="Vitamin E" textContentType="tel" id="UwI-Rq-v2S">
                             <connections>
                                 <action selector="vitaEAction:" destination="cUH-7r-iCA" id="ZEY-1n-MSy"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Vitamin K" id="Wr8-nz-teK">
+                        <textField width="1" alignment="center" placeholder="Vitamin K" textContentType="tel" id="Wr8-nz-teK">
                             <connections>
                                 <action selector="vitaKAction:" destination="cUH-7r-iCA" id="eUu-pt-EVK"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Saturated Fat" id="uPy-y5-AS3">
+                        <textField width="1" alignment="center" placeholder="Saturated Fat" textContentType="tel" id="uPy-y5-AS3">
                             <connections>
                                 <action selector="satFatAction:" destination="cUH-7r-iCA" id="avy-dZ-UJ5"/>
                             </connections>
@@ -401,34 +397,34 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="143" y="1845"/>
+            <point key="canvasLocation" x="-65" y="2127"/>
         </scene>
         <!--manualSix-->
         <scene sceneID="bbh-Y5-gfx">
             <objects>
                 <controller identifier="manualSix" id="xbU-9l-Sd6" customClass="FoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <textField width="1" alignment="center" placeholder="Mono Fat" id="3Nq-1a-QyB">
+                        <textField width="1" alignment="center" placeholder="Mono Fat" textContentType="tel" id="3Nq-1a-QyB">
                             <connections>
                                 <action selector="monoFatAction:" destination="xbU-9l-Sd6" id="nlJ-Gk-SX0"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Poly Fat" id="db6-mg-q7c">
+                        <textField width="1" alignment="center" placeholder="Poly Fat" textContentType="tel" id="db6-mg-q7c">
                             <connections>
                                 <action selector="polyFat:" destination="xbU-9l-Sd6" id="8hr-PX-Hqq"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Iodine" id="oCl-YX-vU2">
+                        <textField width="1" alignment="center" placeholder="Iodine" textContentType="tel" id="oCl-YX-vU2">
                             <connections>
                                 <action selector="iodineAction:" destination="xbU-9l-Sd6" id="yDo-eB-NeP"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Magnesium" id="Toh-dH-mRq">
+                        <textField width="1" alignment="center" placeholder="Magnesium" textContentType="tel" id="Toh-dH-mRq">
                             <connections>
                                 <action selector="magnesiumAction:" destination="xbU-9l-Sd6" id="2hK-s0-WnU"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" placeholder="Maganese" id="DvN-AX-pad">
+                        <textField width="1" alignment="center" placeholder="Maganese" textContentType="tel" id="DvN-AX-pad">
                             <connections>
                                 <action selector="maganeseAction:" destination="xbU-9l-Sd6" id="ieD-iO-ona"/>
                             </connections>
@@ -552,9 +548,7 @@
             <objects>
                 <controller identifier="Sleep" spacing="0.0" id="Z4T-TT-jPX" customClass="SleepInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
-                        <label width="115" height="26" alignment="left" text="Nap Tracking" id="sfm-Tx-n80"/>
-                        <label alignment="left" alpha="0.0" text="Label" id="cpH-AW-X2u"/>
-                        <group width="136" height="116" alignment="center" layout="overlap" id="RXZ-YR-gFp">
+                        <group width="136" height="137" alignment="center" verticalAlignment="center" layout="overlap" id="RXZ-YR-gFp">
                             <items>
                                 <button width="136" height="186" alignment="center" verticalAlignment="bottom" backgroundImage="play.circle.fill" catalog="system" id="0YD-FQ-N13">
                                     <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -579,23 +573,25 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="785.695652173913" y="1388.8392857142858"/>
+            <point key="canvasLocation" x="792.3478260869565" y="1388.8392857142858"/>
         </scene>
         <!--Mood-->
         <scene sceneID="yrQ-EW-ljr">
             <objects>
-                <controller identifier="Mood" spacing="15" id="7Iq-4R-3Ww" customClass="MoodInterfaceController" customModule="myHealth" customModuleProvider="target">
+                <controller identifier="Mood" spacing="15" fullBounds="YES" id="7Iq-4R-3Ww" customClass="MoodInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <group width="1" height="105" alignment="left" id="eXb-gM-YMy">
                             <items>
-                                <picker height="1" alignment="center" verticalAlignment="center" style="stack" id="WXq-8U-ViT">
+                                <picker height="111" alignment="center" verticalAlignment="center" style="stack" id="WXq-8U-ViT">
                                     <connections>
                                         <action selector="moodPickerAction:" destination="7Iq-4R-3Ww" id="JI0-uA-24y"/>
                                     </connections>
                                 </picker>
                             </items>
                         </group>
-                        <button width="1" alignment="center" title="Button" id="dhU-2U-hUb"/>
+                        <button width="1" alignment="center" title="How I feel?" id="dhU-2U-hUb">
+                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                        </button>
                         <separator alignment="left" id="XF7-gX-pyU">
                             <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
@@ -605,7 +601,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="972.695652173913" y="1378.9732142857142"/>
+            <point key="canvasLocation" x="974.91304347826076" y="1389.5982142857142"/>
         </scene>
         <!--toothbrush-->
         <scene sceneID="PUl-6n-sbY">
@@ -614,9 +610,9 @@
                     <items>
                         <group width="1" height="129" alignment="center" id="FJA-le-2CP">
                             <items>
-                                <label width="136" height="127" alignment="center" verticalAlignment="center" text="00:00" textAlignment="center" id="yY4-dw-9Lz">
+                                <label width="136" height="139" alignment="center" verticalAlignment="center" text="2:00" textAlignment="center" id="yY4-dw-9Lz">
                                     <color key="textColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <fontDescription key="font" type="boldSystem" pointSize="22"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="50"/>
                                 </label>
                             </items>
                             <variation key="device=watch38mm" alignment="center" verticalAlignment="top"/>
@@ -659,6 +655,7 @@
                 <controller identifier="Mental" id="uGw-4j-XUb" customClass="mentalInterfaceController" customModule="myHealth" customModuleProvider="target">
                     <items>
                         <label width="136" alignment="left" text="0" id="hSP-15-XCq">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
                             <variation key="device=watch38mm" alignment="left" verticalAlignment="top"/>
                         </label>
                         <group width="136" height="103" alignment="center" layout="vertical" id="Vjf-nE-SMD">
@@ -715,7 +712,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="604.60869565217388" y="1389.5982142857142"/>
+            <point key="canvasLocation" x="608" y="1390"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -781,7 +778,7 @@
                             <variation key="device=watch42mm" alignment="left" verticalAlignment="center"/>
                             <variation key="device=watch44mm" alignment="left" verticalAlignment="center"/>
                         </group>
-                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" id="AQ8-p4-bV1">
+                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" layout="overlap" id="AQ8-p4-bV1">
                             <items>
                                 <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="stop.circle.fill" catalog="system" id="nok-n0-6p0">
                                     <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -791,13 +788,13 @@
                                         <action selector="endWorkoutAction" destination="2Y8-5A-ruT" id="loq-cu-1jG"/>
                                     </connections>
                                 </button>
-                                <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="pause.circle.fill" catalog="system" id="pDw-7i-YAk">
+                                <button width="49" height="43" alignment="right" verticalAlignment="center" backgroundImage="pause.circle.fill" catalog="system" id="pDw-7i-YAk">
                                     <color key="backgroundColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="pauseWorkoutAction" destination="2Y8-5A-ruT" id="XhW-Ya-r6k"/>
                                     </connections>
                                 </button>
-                                <button width="49" height="43" alignment="center" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="Uc9-ia-6JT">
+                                <button width="49" height="43" alignment="right" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="Uc9-ia-6JT">
                                     <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="resumeWorkoutAction" destination="2Y8-5A-ruT" id="HQ1-yV-ZEf"/>
@@ -809,6 +806,9 @@
                     <connections>
                         <outlet property="calorieCountLabel" destination="QNS-yG-WNr" id="fOi-pY-9FV"/>
                         <outlet property="heartRateLabel" destination="9Rm-eB-yzN" id="Bqe-jU-i4q"/>
+                        <outlet property="pauseButton" destination="pDw-7i-YAk" id="fAX-Fh-xyq"/>
+                        <outlet property="startButton" destination="Uc9-ia-6JT" id="3T0-wb-f7h"/>
+                        <outlet property="stopButton" destination="nok-n0-6p0" id="vvl-b2-hiL"/>
                         <outlet property="timer" destination="fuu-LW-KPJ" id="fCg-to-lYp"/>
                     </connections>
                 </controller>
@@ -840,7 +840,7 @@
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
-                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" id="w7J-72-Nbd">
+                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" layout="overlap" spacing="0.0" id="w7J-72-Nbd">
                             <items>
                                 <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="stop.circle.fill" catalog="system" id="49g-hA-cql">
                                     <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -850,13 +850,13 @@
                                         <action selector="endWorkoutAction" destination="wgI-Af-LaD" id="XSR-Ef-DrG"/>
                                     </connections>
                                 </button>
-                                <button width="49" height="43" alignment="left" verticalAlignment="center" backgroundImage="pause.circle.fill" catalog="system" id="wQF-Xo-ZIp">
+                                <button width="49" height="43" alignment="right" verticalAlignment="center" backgroundImage="pause.circle.fill" catalog="system" id="wQF-Xo-ZIp">
                                     <color key="backgroundColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="pauseWorkoutAction" destination="wgI-Af-LaD" id="Rgy-lh-2B6"/>
                                     </connections>
                                 </button>
-                                <button width="49" height="43" alignment="center" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="2n4-QV-EwW">
+                                <button width="49" height="43" alignment="right" verticalAlignment="center" backgroundImage="play.circle.fill" catalog="system" id="2n4-QV-EwW">
                                     <color key="backgroundColor" red="0.18133789450000001" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="resumeWorkoutAction" destination="wgI-Af-LaD" id="gZq-nP-FxQ"/>
@@ -1009,7 +1009,7 @@
                             <variation key="device=watch42mm" alignment="left" verticalAlignment="center"/>
                             <variation key="device=watch44mm" alignment="left" verticalAlignment="center"/>
                         </group>
-                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" id="Fda-wk-6S7">
+                        <group width="155" height="48" alignment="center" verticalAlignment="bottom" layout="overlap" id="Fda-wk-6S7">
                             <items>
                                 <button width="49" height="43" alignment="left" verticalAlignment="bottom" backgroundImage="stop.circle.fill" catalog="system" id="fS2-vq-ovn">
                                     <color key="titleColor" red="1" green="0.13060512220000001" blue="0.1496827298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1019,7 +1019,7 @@
                                         <action selector="endWorkoutAction" destination="wgI-Af-LaD" id="C1V-L4-9fi"/>
                                     </connections>
                                 </button>
-                                <button width="49" height="43" alignment="left" verticalAlignment="bottom" backgroundImage="pause.circle.fill" catalog="system" id="l2f-sF-WV9">
+                                <button width="49" height="43" alignment="right" verticalAlignment="bottom" backgroundImage="pause.circle.fill" catalog="system" id="l2f-sF-WV9">
                                     <color key="backgroundColor" red="0.9901870935" green="1" blue="0.12602980429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="pauseWorkoutAction" destination="wgI-Af-LaD" id="qHq-JM-LKU"/>
